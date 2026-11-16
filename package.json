@@ -1,0 +1,19 @@
+{
+  "name": "site-hebraico-yeshua33",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Portal Sagrado e Calculadora de Gematria Hebraica YESHUA 33",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "hebraico",
+    "gematria",
+    "yeshua",
+    "eternidade",
+    "nova-terra"
+  ],
+  "author": "",
+  "license": "ISC"
+}

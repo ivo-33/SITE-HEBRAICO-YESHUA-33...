@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SITE HEBRAICO YESHUA 33 — ETERNIDADE & GEMATRIA (אֶרֶץ חָדָשָׁה)</title>
+    <meta name="description" content="Um portal sagrado sobre a Nova Terra, a Eternidade e a Comunhão Plena com Deus Pai Criador em símbolos hebraicos e luz neon.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;600;700&family=Noto+Serif+Hebrew:wght@400;700;900&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --bg-dark: #040806;
+            --bg-card: rgba(8, 20, 14, 0.75);
+            --border-neon: rgba(0, 255, 136, 0.3);
+            --border-neon-bright: #00ff88;
+            --neon-green: #00ff88;
+            --neon-glow: #00ff66;
+            --neon-mint: #a7f3d0;
+            --text-main: #f0fdf4;
+            --text-muted: #6ee7b7;
+            --font-serif: 'Cinzel', serif;
+            --font-hebrew: 'Noto Serif Hebrew', serif;
+            --font-tech: 'Orbitron', sans-serif;
+            --font-sans: 'Inter', sans-serif;
+            --shadow-neon: 0 0 25px rgba(0, 255, 136, 0.25);
+            --shadow-heavy: 0 0 50px rgba(0, 255, 136, 0.4);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(0, 255, 136, 0.12) 0%, transparent 60%),
+                radial-gradient(circle at 100% 100%, rgba(0, 230, 118, 0.08) 0%, transparent 50%);
+        }
+
+        /* Matrix / Hebrew Particle Canvas Background */
+        #canvas-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.35;
+        }
+
+        /* Top Navigation Header */
+        header.nav-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(4, 8, 6, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-neon);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-tech);
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--neon-green);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 12px var(--neon-green);
+        }
+
+        .brand span.hebrew {
+            font-family: var(--font-hebrew);
+            color: var(--neon-mint);
+            font-size: 1.6rem;
+            margin-left: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            color: var(--neon-green);
+            text-shadow: 0 0 8px var(--neon-green);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 5rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .badge-hebrew {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid var(--border-neon-bright);
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            color: var(--neon-green);
+            font-family: var(--font-hebrew);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-neon);
+            animation: pulse-glow 3s infinite alternate;
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 15px rgba(0, 255, 136, 0.2); }
+            100% { box-shadow: 0 0 35px rgba(0, 255, 136, 0.6); }
+        }
+
+        h1.hero-title {
+            font-family: var(--font-serif);
+            font-size: 4rem;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+        }
+
+        h1.hero-title span {
+            color: var(--neon-green);
+            text-shadow: 0 0 30px var(--neon-green);
+        }
+
+        h2.hero-subtitle {
+            font-family: var(--font-sans);
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            max-width: 900px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
+            border-left: 3px solid var(--neon-green);
+            padding-left: 1.5rem;
+            text-align: left;
+            background: rgba(0, 255, 136, 0.04);
+            padding: 1.2rem;
+            border-radius: 0 12px 12px 0;
+        }
+
+        /* Hero Image Container */
+        .hero-image-wrapper {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto 4rem;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid var(--border-neon-bright);
+            box-shadow: var(--shadow-heavy);
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image-wrapper:hover {
+            transform: scale(1.01);
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            filter: brightness(1.05) contrast(1.1);
+        }
+
+        .hero-image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(4, 8, 6, 0.95), transparent);
+            padding: 2.5rem 2rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .overlay-title {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            color: var(--neon-green);
+            text-shadow: 0 0 10px var(--neon-green);
+        }
+
+        .overlay-hebrew {
+            font-family: var(--font-hebrew);
+            font-size: 2rem;
+            color: #ffffff;
+        }
+
+        /* Grid Layout & Cards */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            color: var(--neon-green);
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .glass-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border-neon);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow-neon);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: var(--border-neon-bright);
+            box-shadow: var(--shadow-heavy);
+            transform: translateY(-4px);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        @media (max-width: 900px) {
+            .grid-3, .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            h1.hero-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Hebrew Symbol Cards */
+        .hebrew-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hebrew-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 255, 136, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hebrew-glyph {
+            font-family: var(--font-hebrew);
+            font-size: 3rem;
+            color: var(--neon-green);
+            text-shadow: 0 0 20px var(--neon-green);
+            margin-bottom: 0.5rem;
+            direction: rtl;
+        }
+
+        .symbol-transliteration {
+            font-family: var(--font-tech);
+            font-size: 0.85rem;
+            color: var(--neon-mint);
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .symbol-portuguese {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+        }
+
+        .symbol-description {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Gallery Grid */
+        .gallery-card {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-neon);
+            cursor: pointer;
+            box-shadow: var(--shadow-neon);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(4, 8, 6, 0.95), transparent);
+            padding: 1.5rem 1rem 1rem;
+            color: #ffffff;
+        }
+
+        .gallery-caption h3 {
+            font-family: var(--font-serif);
+            color: var(--neon-green);
+            font-size: 1.2rem;
+        }
+
+        /* Buttons */
+        .btn-neon {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: transparent;
+            color: var(--neon-green);
+            border: 2px solid var(--neon-green);
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            font-family: var(--font-tech);
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+            text-transform: uppercase;
+        }
+
+        .btn-neon:hover {
+            background: var(--neon-green);
+            color: #040806;
+            box-shadow: 0 0 30px var(--neon-green);
+            transform: translateY(-2px);
+        }
+
+        .btn-audio {
+            background: rgba(0, 255, 136, 0.15);
+            border: 1px solid var(--border-neon-bright);
+        }
+
+        /* Interactive Gematria Tool */
+        .gematria-box {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .hebrew-keyboard {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 1rem;
+        }
+
+        .key-btn {
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid var(--border-neon);
+            color: var(--neon-green);
+            font-family: var(--font-hebrew);
+            font-size: 1.3rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .key-btn:hover {
+            background: var(--neon-green);
+            color: #040806;
+            box-shadow: 0 0 10px var(--neon-green);
+        }
+
+        /* Lightbox Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .modal-content {
+            max-width: 900px;
+            width: 100%;
+            border: 2px solid var(--border-neon-bright);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-heavy);
+            position: relative;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid var(--neon-green);
+            color: var(--neon-green);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            border-top: 1px solid var(--border-neon);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            background: rgba(4, 8, 6, 0.95);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Canvas Background Particles -->
+    <canvas id="canvas-bg"></canvas>
+
+    <!-- Navigation Header -->
+    <header class="nav-header">
+        <div class="brand">
+            <i data-lucide="sparkles"></i>
+            YESHUA 33 <span class="hebrew">יֵשׁוּעַ</span>
+        </div>
+        <div class="nav-links">
+            <a class="nav-link" href="#nova-terra">NOVA TERRA</a>
+            <a class="nav-link" href="#secao-louvor-video">VÍDEOS & LOUVOR</a>
+            <a class="nav-link" href="#simbolos">SÍMBOLOS HEBRAICOS</a>
+            <a class="nav-link" href="#galeria">GALERIA SACRA</a>
+            <a class="nav-link" href="#gematria">GEMATRIA</a>
+            <button id="btn-sound" class="btn-neon btn-audio">
+                <i data-lucide="volume-2"></i> 528Hz SOM SAGRADO
+            </button>
+            <button id="btn-kodoish" class="btn-neon" onclick="switchVideo('lHdr7akL7xg', 'Yeshua - Frei Gilson')" style="border-color: var(--neon-green); background: rgba(0, 255, 136, 0.12); box-shadow: var(--shadow-neon);">
+                <span style="font-family: var(--font-hebrew); font-size: 1.3rem; color: #ffffff; text-shadow: 0 0 8px var(--neon-green);">יֵשׁוּעַ</span> LOUVOR YESHUA
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section (Baseado no HTML fornecido) -->
+    <section id="nova-terra" class="hero-section">
+        <div class="badge-hebrew">
+            ✨ אֶרֶץ חָדָשָׁה — ERETZ CHADASHA (NOVA TERRA)
+        </div>
+
+        <h1 class="hero-title">
+            SITE HEBRAICO <span>YESHUA 33</span>
+        </h1>
+
+        <h2 class="hero-subtitle">
+            "ONDE NÃO HAVERÁ FOME NEM DOR, E VIVEREMOS EM PLENA COMUNHÃO COM DEUS PAI CRIADOR POR TODA ETERNIDADE AMÉM..."
+        </h2>
+
+        <!-- Main Banner Image -->
+        <div class="hero-image-wrapper">
+            <img src="./IMAGENS/CEU.png" onerror="if(this.src.includes('IMAGENS/')){this.src=this.src.replace('IMAGENS/','');}" alt="DEUS CRIADOR — VISÃO DA NOVA TERRA" id="main-hero-img">
+            <div class="hero-image-overlay">
+                <div>
+                    <div class="overlay-title">A GLÓRIA DO REINO VINDOURO</div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Comunhão Ininterrupta na Luz Divina</p>
+                </div>
+                <div class="overlay-hebrew">
+                    שָׁמַיִם חֲדָשִׁים וָאָרֶץ חָדָשָׁה
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Promise Generator -->
+        <div style="text-align: center; margin-top: 1rem;">
+            <button id="btn-promise" class="btn-neon">
+                <i data-lucide="book-open"></i> REVELAÇÃO SOBRE A NOVA TERRA
+            </button>
+            <div id="promise-display" class="glass-card" style="display: none; margin-top: 1.5rem; border-color: var(--neon-green);">
+                <p id="promise-text" style="font-family: var(--font-serif); font-size: 1.2rem; color: #ffffff;"></p>
+                <span id="promise-ref" style="color: var(--neon-green); font-weight: 700; font-size: 0.9rem; margin-top: 0.5rem; display: block;"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Embedded Louvor YESHUA Frei Gilson Video Player Section -->
+    <section id="secao-louvor-video" class="container" style="display: block; margin-bottom: 3rem;">
+        <div class="glass-card" style="border: 2px solid var(--border-neon-bright); box-shadow: var(--shadow-heavy); position: relative;">
+
+            <div style="text-align: center; margin-bottom: 1.5rem;">
+                <div style="font-family: var(--font-hebrew); font-size: 2.8rem; color: var(--neon-green); text-shadow: 0 0 25px var(--neon-green); margin-bottom: 0.3rem;">
+                    יֵשׁוּעַ • FREI GILSON (SOM DO MONTE)
+                </div>
+                <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: #ffffff; letter-spacing: 2px;">
+                    🎵 YESHUA — FREI GILSON (SOM DO MONTE)
+                </h3>
+                <p style="color: var(--neon-mint); font-size: 0.95rem; margin-top: 0.3rem;">
+                    ✨ Louvor Sagrado & Vídeo Oficial
+                </p>
+            </div>
+
+            <!-- In-Page Responsive 16:9 Video Player Embed -->
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px; border: 2px solid var(--border-neon); box-shadow: var(--shadow-neon); margin-bottom: 1.5rem; background: #000;">
+                <iframe 
+                    id="inpage-kodoish-iframe"
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                    src="https://www.youtube-nocookie.com/embed/lHdr7akL7xg?rel=0&enablejsapi=1" 
+                    title="YESHUA — Frei Gilson (Som do Monte)" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    playsinline
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <!-- Hebrew Meaning Grid & Direct Link -->
+            <div class="grid-3" style="font-size: 0.85rem; text-align: center; margin-bottom: 1rem;">
+                <div style="background: rgba(0,255,136,0.06); border: 1px solid var(--border-neon); padding: 0.8rem; border-radius: 8px;">
+                    <strong style="color: var(--neon-green); font-family: var(--font-hebrew); font-size: 1.3rem; display: block;">יֵשׁוּעַ (Yeshua)</strong>
+                    <span style="color: var(--text-muted);">Salvação / O Rei Redentor</span>
+                </div>
+                <div style="background: rgba(0,255,136,0.06); border: 1px solid var(--border-neon); padding: 0.8rem; border-radius: 8px;">
+                    <strong style="color: var(--neon-green); font-family: var(--font-hebrew); font-size: 1.3rem; display: block;">קָדוֹשׁ (Kodoish)</strong>
+                    <span style="color: var(--text-muted);">Santo / Consagrado</span>
+                </div>
+                <div style="background: rgba(0,255,136,0.06); border: 1px solid var(--border-neon); padding: 0.8rem; border-radius: 8px;">
+                    <strong style="color: var(--neon-green); font-family: var(--font-hebrew); font-size: 1.3rem; display: block;">אֲדֹנָי (Adonai)</strong>
+                    <span style="color: var(--text-muted);">Senhor Supremo</span>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <a id="btn-direct-yt" href="https://www.youtube.com/watch?v=lHdr7akL7xg" target="_blank" class="btn-neon" style="font-size: 0.85rem; text-decoration: none;">
+                    <i data-lucide="external-link"></i> Abrir YESHUA (Frei Gilson) no YouTube Oficial
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hebrew Sacred Lexicon & Symbols Section -->
+    <section id="simbolos" class="container">
+        <div class="section-header">
+            <h2 class="section-title">SÍMBOLOS & PALAVRAS SAGRADAS EM HEBRAICO</h2>
+            <p class="section-subtitle">A linguagem bíblica original revelando os mistérios da Nova Terra e da Comunhão Divina</p>
+        </div>
+
+        <div class="grid-3">
+            <!-- Card 1 -->
+            <div class="glass-card hebrew-card">
+                <div>
+                    <div class="hebrew-glyph">אֶרֶץ חָדָשָׁה</div>
+                    <div class="symbol-transliteration">ERETZ CHADASHA</div>
+                    <div class="symbol-portuguese">Nova Terra</div>
+                    <p class="symbol-description">
+                        O novo estado físico e espiritual renovado por Deus. Onde a justiça habita e a dor, as lágrimas e a fome são totalmente extintas (Apocalipse 21:1).
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="glass-card hebrew-card">
+                <div>
+                    <div class="hebrew-glyph">עוֹלָם</div>
+                    <div class="symbol-transliteration">OLAM</div>
+                    <div class="symbol-portuguese">Eternidade / Século Vindouro</div>
+                    <p class="symbol-description">
+                        Dimensão atemporal da existência em comunhão direta com o Criador. Perpetuidade de paz e plenitude divina sem fim.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="glass-card hebrew-card">
+                <div>
+                    <div class="hebrew-glyph">יהוה</div>
+                    <div class="symbol-transliteration">YAHWEH / TETRAGRAMMATON</div>
+                    <div class="symbol-portuguese">Deus Pai Criador</div>
+                    <p class="symbol-description">
+                        O Nome Sagrado Inefável do Criador Todo-Poderoso ("Eu Sou o Que Sou"), fonte inesgotável da vida e do amor eterno.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="glass-card hebrew-card">
+                <div>
+                    <div class="hebrew-glyph">עֵץ הַחַיִּים</div>
+                    <div class="symbol-transliteration">ETZ HACHAYIM</div>
+                    <div class="symbol-portuguese">A Árvore da Vida</div>
+                    <p class="symbol-description">
+                        Localizada no centro da Nova Jerusalém, cujas folhas são para a cura das nações e cujos frutos concedem imortalidade.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="glass-card hebrew-card">
+                <div>
+                    <div class="hebrew-glyph">שָׁלוֹם</div>
+                    <div class="symbol-transliteration">SHALOM</div>
+                    <div class="symbol-portuguese">Paz Plena & Comunhão</div>
+                    <p class="symbol-description">
+                        Muito mais que ausência de conflito: a restauração completa de todas as coisas em perfeita harmonia com Deus Pai.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="glass-card hebrew-card">
+                <div>
+                    <div class="hebrew-glyph">אָמֵן</div>
+                    <div class="symbol-transliteration">AMEN</div>
+                    <div class="symbol-portuguese">Assim Seja / Verdade Firmada</div>
+                    <p class="symbol-description">
+                        A selagem da aliança e da fé inabalável nas promessas do Altíssimo por toda a eternidade.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sacred Gallery Section -->
+    <section id="galeria" class="container">
+        <div class="section-header">
+            <h2 class="section-title">GALERIA VISUAL NEON SACRA</h2>
+            <p class="section-subtitle">Imagens simbólicas do Reino Celestial e dos Símbolos da Eternidade</p>
+        </div>
+
+        <div class="grid-3">
+            <div class="gallery-card" onclick="openLightbox('./IMAGENS/CEU.png', 'Nova Terra & Luz da Eternidade')">
+                <img src="./IMAGENS/CEU.png" alt="Céu e Nova Terra">
+                <div class="gallery-caption">
+                    <h3>🌌 A Nova Terra</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">Comunhão com Deus Pai Criador</p>
+                </div>
+            </div>
+
+            <div class="gallery-card" onclick="openLightbox('./IMAGENS/ARVORE_VIDA.png', 'Etz HaChayim — A Árvore da Vida')">
+                <img src="./IMAGENS/ARVORE_VIDA.png" alt="Árvore da Vida">
+                <div class="gallery-caption">
+                    <h3>🌳 Etz HaChayim (Árvore da Vida)</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">A Fonte da Cura e Imortalidade</p>
+                </div>
+            </div>
+
+            <div class="gallery-card" onclick="openLightbox('./IMAGENS/ETERNIDADE_SIMBOLO.png', 'Símbolo Cripto-Sagrado de Olam (Eternidade)')">
+                <img src="./IMAGENS/ETERNIDADE_SIMBOLO.png" alt="Símbolo de Eternidade">
+                <div class="gallery-caption">
+                    <h3>✨ Olam (Eternidade Hebraica)</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">O Nome Inefável do Altíssimo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Gematria Section -->
+    <section id="gematria" class="container">
+        <div class="glass-card">
+            <div class="grid-2">
+                <div class="gematria-box">
+                    <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--neon-green); display: flex; align-items: center; gap: 0.5rem;">
+                        🧮 CALCULADORA & TRANSLITERADOR DE GEMATRIA HEBRAICA
+                    </h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        <strong>Como funciona:</strong> Digite normalmente no seu <u>teclado brasileiro</u> (ex: <i>DEUS</i>, <i>PAZ</i>, <i>AMOR</i>) ou cole letras em Hebraico! O motor converte automaticamente cada letra em caracteres hebraicos e calcula a soma sagrada.
+                    </p>
+
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem;">
+                        <label style="font-size: 0.8rem; color: var(--neon-mint); text-transform: uppercase; font-weight: 700; letter-spacing: 1px;">Digite aqui com seu teclado (Português ou Hebraico):</label>
+                        <div style="display: flex; gap: 0.5rem; align-items: center;">
+                            <input type="text" id="gematria-input" oninput="calculateGematriaFromInput(this.value)" style="flex: 1; background: rgba(0,255,136,0.08); border: 2px solid var(--border-neon-bright); padding: 0.9rem; border-radius: 10px; color: #ffffff; font-size: 1.3rem; outline: none; box-shadow: var(--shadow-neon);" placeholder="Digite algo ex: PAZ ou DEUS..." autofocus>
+                            <button class="btn-neon" onclick="clearGematria()" style="padding: 0.9rem 1.2rem;">LIMPAR</button>
+                        </div>
+                    </div>
+
+                    <!-- Transliterated Hebrew Output Box -->
+                    <div style="background: rgba(4, 8, 6, 0.8); border: 1px solid var(--border-neon); border-radius: 10px; padding: 1rem; margin-top: 0.5rem;">
+                        <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.2rem;">CONVERSÃO EM TEMPO REAL PARA HEBRAICO:</div>
+                        <div id="hebrew-transliterated-text" style="font-family: var(--font-hebrew); font-size: 2.2rem; color: var(--neon-green); text-shadow: 0 0 15px var(--neon-green); direction: rtl; min-height: 45px; word-break: break-all;">
+                            —
+                        </div>
+                        <div id="gematria-equation" style="font-size: 0.85rem; color: var(--neon-mint); margin-top: 0.4rem; font-family: monospace; word-break: break-all;">
+                            Aguardando digitação...
+                        </div>
+                    </div>
+
+                    <div class="hebrew-keyboard">
+                        <span style="width: 100%; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.3rem;">OU CLIQUE NAS LETRA HEBRAICAS INDIVIDUAIS:</span>
+                        <button class="key-btn" onclick="addLetter('א')">א (1)</button>
+                        <button class="key-btn" onclick="addLetter('ב')">ב (2)</button>
+                        <button class="key-btn" onclick="addLetter('ג')">ג (3)</button>
+                        <button class="key-btn" onclick="addLetter('ד')">ד (4)</button>
+                        <button class="key-btn" onclick="addLetter('ה')">ה (5)</button>
+                        <button class="key-btn" onclick="addLetter('ו')">ו (6)</button>
+                        <button class="key-btn" onclick="addLetter('ז')">ז (7)</button>
+                        <button class="key-btn" onclick="addLetter('ח')">ח (8)</button>
+                        <button class="key-btn" onclick="addLetter('ט')">ט (9)</button>
+                        <button class="key-btn" onclick="addLetter('י')">י (10)</button>
+                        <button class="key-btn" onclick="addLetter('כ')">כ (20)</button>
+                        <button class="key-btn" onclick="addLetter('ל')">ל (30)</button>
+                        <button class="key-btn" onclick="addLetter('מ')">מ (40)</button>
+                        <button class="key-btn" onclick="addLetter('נ')">נ (50)</button>
+                        <button class="key-btn" onclick="addLetter('ס')">ס (60)</button>
+                        <button class="key-btn" onclick="addLetter('ע')">ע (70)</button>
+                        <button class="key-btn" onclick="addLetter('פ')">פ (80)</button>
+                        <button class="key-btn" onclick="addLetter('צ')">צ (90)</button>
+                        <button class="key-btn" onclick="addLetter('ק')">ק (100)</button>
+                        <button class="key-btn" onclick="addLetter('ר')">ר (200)</button>
+                        <button class="key-btn" onclick="addLetter('ש')">ש (300)</button>
+                        <button class="key-btn" onclick="addLetter('ת')">ת (400)</button>
+                    </div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; background: rgba(0,255,136,0.03); border: 1px solid var(--border-neon); border-radius: 12px; padding: 2rem; text-align: center;">
+                    <div style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem;">VALOR NUMÉRICO TOTAL</div>
+                    <div id="gematria-val" style="font-family: var(--font-tech); font-size: 4rem; color: var(--neon-green); text-shadow: 0 0 25px var(--neon-green); font-weight: 900;">0</div>
+                    <div id="gematria-meaning" style="font-size: 0.95rem; color: var(--neon-mint); margin-top: 1rem; line-height: 1.5; font-weight: 600;">Digite uma palavra acima para ver seu código sagrado.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="modal-overlay" onclick="closeLightbox()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-close" onclick="closeLightbox()">&times;</div>
+            <img id="lightbox-img" src="" alt="">
+            <div id="lightbox-title" style="padding: 1rem; text-align: center; font-family: var(--font-serif); font-size: 1.2rem; color: var(--neon-green); background: rgba(4,8,6,0.95);"></div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <p>✨ <strong>ETERNIDADE & NOVA TERRA</strong> — Em plena comunhão com Deus Pai Criador por toda a eternidade. Amém.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.75rem; color: rgba(255,255,255,0.4);">Desenvolvido sob o protocolo de design Neon-Sacro SENTINEL.</p>
+    </footer>
+
+    <!-- JavaScript logic -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // 1. Matrix / Hebrew Matrix Particle Background
+        const canvas = document.getElementById('canvas-bg');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        const hebrewChars = 'אבגדהוזחטיכלמנסעפצקרשת';
+        const fontSize = 16;
+        const columns = Math.floor(window.innerWidth / fontSize);
+        const drops = Array(columns).fill(1);
+
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(4, 8, 6, 0.08)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#00ff88';
+            ctx.font = fontSize + 'px "Noto Serif Hebrew"';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = hebrewChars.charAt(Math.floor(Math.random() * hebrewChars.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+        setInterval(drawMatrix, 45);
+
+        // 2. Audio Generator (528 Hz Miraculous Frequency via Web Audio API)
+        let audioCtx = null;
+        let oscillator = null;
+        let gainNode = null;
+        let isPlaying = false;
+
+        document.getElementById('btn-sound').addEventListener('click', async () => {
+            const btn = document.getElementById('btn-sound');
+
+            if (!isPlaying) {
+                if (!audioCtx) {
+                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+                if (audioCtx.state === 'suspended') {
+                    await audioCtx.resume();
+                }
+                oscillator = audioCtx.createOscillator();
+                gainNode = audioCtx.createGain();
+
+                oscillator.type = 'sine';
+                oscillator.frequency.setValueAtTime(528, audioCtx.currentTime); // 528Hz Solfeggio
+
+                gainNode.gain.setValueAtTime(0.01, audioCtx.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.12, audioCtx.currentTime + 2);
+
+                oscillator.connect(gainNode);
+                gainNode.connect(audioCtx.destination);
+
+                oscillator.start();
+                isPlaying = true;
+                btn.innerHTML = `<i data-lucide="volume-x"></i> PARAR SOM (528Hz)`;
+                btn.style.background = 'var(--neon-green)';
+                btn.style.color = '#040806';
+                lucide.createIcons();
+            } else {
+                if (gainNode) {
+                    gainNode.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 1);
+                    setTimeout(() => {
+                        try { oscillator.stop(); } catch(e){}
+                        isPlaying = false;
+                        btn.innerHTML = `<i data-lucide="volume-2"></i> 528Hz SOM SAGRADO`;
+                        btn.style.background = 'rgba(0, 255, 136, 0.15)';
+                        btn.style.color = 'var(--neon-green)';
+                        lucide.createIcons();
+                    }, 1000);
+                }
+            }
+        });
+
+        // 3. Promise Generator
+        const promises = [
+            { text: '"Vi um novo céu e uma nova terra. Porque já o primeiro céu e a primeira terra passaram, e o mar já não existe. E Deus limpará de seus olhos toda a lágrima; e não haverá mais morte, nem pranto, nem clamor, nem dor; porque já as primeiras coisas são passadas."', ref: 'Apocalipse 21:1, 4' },
+            { text: '"A cidade não necessita de sol nem de lua para que nela brilhem, porque a glória de Deus a ilumina, e o Cordeiro é a sua lâmpada. As nações andarão à sua luz, e os reis da terra trarão para ela a sua glória."', ref: 'Apocalipse 21:23-24' },
+            { text: '"No meio da sua praça, e de um e de outro lado do rio, estava a árvore da vida, que produz doze frutos, dando seu fruto de mês em mês; e as folhas da árvore são para a cura das nações."', ref: 'Apocalipse 22:2' },
+            { text: '"Nela nunca mais haverá maldição alguma. Nela estará o trono de Deus e do Cordeiro, e os seus servos o servirão. E verão o seu rosto, e nas suas testas estará o seu nome."', ref: 'Apocalipse 22:3-4' }
+        ];
+
+        document.getElementById('btn-promise').addEventListener('click', () => {
+            const random = promises[Math.floor(Math.random() * promises.length)];
+            const display = document.getElementById('promise-display');
+            document.getElementById('promise-text').innerText = random.text;
+            document.getElementById('promise-ref').innerText = '— ' + random.ref;
+            display.style.display = 'block';
+            display.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+
+        // 4. Gematria Transliteration & Calculation Engine
+        const HEBREW_GEMATRIA_MAP = {
+            // Direct Hebrew Letter Values
+            'א': { hebrew: 'א', val: 1, name: 'Aleph' },
+            'ב': { hebrew: 'ב', val: 2, name: 'Bet' },
+            'ג': { hebrew: 'ג', val: 3, name: 'Gimel' },
+            'ד': { hebrew: 'ד', val: 4, name: 'Dalet' },
+            'ה': { hebrew: 'ה', val: 5, name: 'Hei' },
+            'ו': { hebrew: 'ו', val: 6, name: 'Vav' },
+            'ז': { hebrew: 'ז', val: 7, name: 'Zayin' },
+            'ח': { hebrew: 'ח', val: 8, name: 'Chet' },
+            'ט': { hebrew: 'ט', val: 9, name: 'Tet' },
+            'י': { hebrew: 'י', val: 10, name: 'Yod' },
+            'כ': { hebrew: 'כ', val: 20, name: 'Kaf' },
+            'ך': { hebrew: 'ך', val: 20, name: 'Kaf Final' },
+            'ל': { hebrew: 'ל', val: 30, name: 'Lamed' },
+            'מ': { hebrew: 'מ', val: 40, name: 'Mem' },
+            'ם': { hebrew: 'ם', val: 40, name: 'Mem Final' },
+            'נ': { hebrew: 'נ', val: 50, name: 'Nun' },
+            'ן': { hebrew: 'ן', val: 50, name: 'Nun Final' },
+            'ס': { hebrew: 'ס', val: 60, name: 'Samech' },
+            'ע': { hebrew: 'ע', val: 70, name: 'Ayin' },
+            'פ': { hebrew: 'פ', val: 80, name: 'Pe' },
+            'ף': { hebrew: 'ף', val: 80, name: 'Pe Final' },
+            'צ': { hebrew: 'צ', val: 90, name: 'Tzadi' },
+            'ץ': { hebrew: 'ץ', val: 90, name: 'Tzadi Final' },
+            'ק': { hebrew: 'ק', val: 100, name: 'Kof' },
+            'ר': { hebrew: 'ר', val: 200, name: 'Resh' },
+            'ש': { hebrew: 'ש', val: 300, name: 'Shin' },
+            'ת': { hebrew: 'ת', val: 400, name: 'Tav' },
+
+            // Phonetic Mapping for Brazilian / Latin QWERTY Keyboards
+            'a': { hebrew: 'א', val: 1 },
+            'b': { hebrew: 'ב', val: 2 },
+            'c': { hebrew: 'כ', val: 20 },
+            'd': { hebrew: 'ד', val: 4 },
+            'e': { hebrew: 'ה', val: 5 },
+            'f': { hebrew: 'פ', val: 80 },
+            'g': { hebrew: 'ג', val: 3 },
+            'h': { hebrew: 'ה', val: 5 },
+            'i': { hebrew: 'י', val: 10 },
+            'j': { hebrew: 'י', val: 10 },
+            'k': { hebrew: 'ק', val: 100 },
+            'l': { hebrew: 'ל', val: 30 },
+            'm': { hebrew: 'מ', val: 40 },
+            'n': { hebrew: 'נ', val: 50 },
+            'o': { hebrew: 'ו', val: 6 },
+            'p': { hebrew: 'פ', val: 80 },
+            'q': { hebrew: 'ק', val: 100 },
+            'r': { hebrew: 'ר', val: 200 },
+            's': { hebrew: 'ס', val: 60 },
+            't': { hebrew: 'ת', val: 400 },
+            'u': { hebrew: 'ו', val: 6 },
+            'v': { hebrew: 'ו', val: 6 },
+            'w': { hebrew: 'ו', val: 6 },
+            'x': { hebrew: 'ש', val: 300 },
+            'y': { hebrew: 'י', val: 10 },
+            'z': { hebrew: 'ז', val: 7 }
+        };
+
+        function calculateGematriaFromInput(text) {
+            if (!text || text.trim() === '') {
+                document.getElementById('hebrew-transliterated-text').innerText = '—';
+                document.getElementById('gematria-equation').innerText = 'Aguardando digitação...';
+                document.getElementById('gematria-val').innerText = '0';
+                document.getElementById('gematria-meaning').innerText = 'Digite uma palavra acima para ver seu código sagrado.';
+                return;
+            }
+
+            let totalValue = 0;
+            let hebrewCharsOutput = [];
+            let equationTerms = [];
+
+            const cleanText = text.toLowerCase();
+
+            for (let i = 0; i < cleanText.length; i++) {
+                const char = cleanText[i];
+                
+                // Ignora espaços e pontuações no cálculo numérico
+                if (char === ' ') {
+                    hebrewCharsOutput.push(' ');
+                    continue;
+                }
+
+                const mapping = HEBREW_GEMATRIA_MAP[char];
+                if (mapping) {
+                    hebrewCharsOutput.push(mapping.hebrew);
+                    totalValue += mapping.val;
+                    equationTerms.push(`${mapping.hebrew} (${mapping.val})`);
+                } else if (HEBREW_GEMATRIA_MAP[text[i]]) { // Se o próprio caractere for hebraico maiúsculo/original
+                    const origMapping = HEBREW_GEMATRIA_MAP[text[i]];
+                    hebrewCharsOutput.push(origMapping.hebrew);
+                    totalValue += origMapping.val;
+                    equationTerms.push(`${origMapping.hebrew} (${origMapping.val})`);
+                }
+            }
+
+            const hebrewResultStr = hebrewCharsOutput.join('');
+            document.getElementById('hebrew-transliterated-text').innerText = hebrewResultStr || '—';
+            document.getElementById('gematria-equation').innerText = equationTerms.length > 0 ? equationTerms.join(' + ') + ' = ' + totalValue : 'Sem correspondência numéricas.';
+            document.getElementById('gematria-val').innerText = totalValue;
+
+            // Revelação dos Significados Espirituais por Valor Gematria
+            let meaning = `Código Gematria da palavra "${text}": ${totalValue}.`;
+            if (totalValue === 26) meaning = '✨ 26 = O Código Sagrado do Nome de God/Deus (יהוה - YAHWEH / O CRIADOR)!';
+            else if (totalValue === 13) meaning = '✨ 13 = Valor de אֶחָד (Echad) — Unidade Divina e Amor (Deus é Um).';
+            else if (totalValue === 18) meaning = '✨ 18 = Valor de חַי (Chai) — A Vida Abundante e Eterna!';
+            else if (totalValue === 75) meaning = '✨ 75 = Transliteração de DEUS / PAZ — Frequência da Comunhão Eterna.';
+            else if (totalValue === 386 || totalValue === 358) meaning = '✨ 386 / 358 = Código Gematria de יֵשׁוּעַ (YESHUA) & מָשִׁיחַ (Mashiach) — O Messias Redentor!';
+            else if (totalValue === 400) meaning = '✨ 400 = Valor da Letra ת (Tav) — A Perfeição, a Aliança e a Eternidade.';
+            else if (totalValue === 100) meaning = '✨ 100 = Valor da Letra ק (Kof) — Santidade e Iluminação Divina.';
+            else if (totalValue === 43) meaning = '✨ 43 = Código da Palavra AMOR — Sintonia de Fé e Luz.';
+
+            document.getElementById('gematria-meaning').innerText = meaning;
+        }
+
+        function addLetter(hebrewLetter) {
+            const inputEl = document.getElementById('gematria-input');
+            inputEl.value += hebrewLetter;
+            calculateGematriaFromInput(inputEl.value);
+            inputEl.focus();
+        }
+
+        function clearGematria() {
+            const inputEl = document.getElementById('gematria-input');
+            inputEl.value = '';
+            calculateGematriaFromInput('');
+            inputEl.focus();
+        }
+
+        // 5. Lightbox Modal
+        function openLightbox(src, title) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox-title').innerText = title;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        // 6. Interactive Louvor & Video Switcher Controls
+        function switchVideo(youtubeId, titleText) {
+            const section = document.getElementById('secao-louvor-video');
+            const iframe = document.getElementById('inpage-kodoish-iframe');
+            const directLink = document.getElementById('btn-direct-yt');
+            const activeTitle = document.getElementById('video-active-title');
+
+            if (section) section.style.display = 'block';
+            if (iframe) {
+                iframe.src = `https://www.youtube-nocookie.com/embed/${youtubeId}?rel=0&enablejsapi=1&autoplay=1`;
+            }
+            if (directLink) {
+                directLink.href = `https://www.youtube.com/watch?v=${youtubeId}`;
+            }
+            if (activeTitle && titleText) {
+                activeTitle.innerText = titleText.toUpperCase();
+            }
+            section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function toggleInPagePlayer(show) {
+            switchVideo('lHdr7akL7xg', 'Yeshua — Frei Gilson (Som do Monte)');
+        }
+
+        function openKodoishModal() {
+            document.getElementById('modal-kodoish').style.display = 'flex';
+        }
+
+        function closeKodoishModal() {
+            document.getElementById('modal-kodoish').style.display = 'none';
+            const iframe = document.getElementById('kodoish-iframe');
+            if (iframe) {
+                const src = iframe.src;
+                iframe.src = '';
+                iframe.src = src;
+            }
+        }
+
+        function closeKodoishModal() {
+            document.getElementById('modal-kodoish').style.display = 'none';
+            const iframe = document.getElementById('kodoish-iframe');
+            if (iframe) {
+                const src = iframe.src;
+                iframe.src = '';
+                iframe.src = src;
+            }
+        }
+    </script>
+</body>
+</html>
