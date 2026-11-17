@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SITE HEBRAICO YESHUA 33 — ETERNIDADE & GEMATRIA (אֶרֶץ חָדָשָׁה)</title>
-    <meta name="description" content="Um portal sagrado sobre a Nova Terra, a Eternidade e a Comunhão Plena com Deus Pai Criador em símbolos hebraicos e luz neon.">
+    <meta name="description" content="Site Hebraico YESHUA 33 — Portal sagrado sobre a Nova Terra, a Eternidade e a Comunhão Plena com Deus Pai Criador em símbolos hebraicos, calculadora de gematria e luz neon.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -407,11 +407,6 @@
             transform: translateY(-2px);
         }
 
-        .btn-audio {
-            background: rgba(0, 255, 136, 0.15);
-            border: 1px solid var(--border-neon-bright);
-        }
-
         /* Interactive Gematria Tool */
         .gematria-box {
             display: flex;
@@ -442,6 +437,72 @@
             background: var(--neon-green);
             color: #040806;
             box-shadow: 0 0 10px var(--neon-green);
+        }
+
+        /* Gematria Result Panel & Quick Chips */
+        .quick-chips-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            align-items: center;
+            margin-top: 0.4rem;
+        }
+
+        .quick-chip {
+            background: rgba(0, 255, 136, 0.08);
+            border: 1px solid var(--border-neon);
+            color: var(--neon-mint);
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 0.35rem 0.75rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+        }
+
+        .quick-chip:hover {
+            background: var(--neon-green);
+            color: #040806;
+            box-shadow: 0 0 14px var(--neon-green);
+            transform: translateY(-2px);
+        }
+
+        .gematria-result-panel {
+            background: rgba(4, 14, 10, 0.9);
+            border: 2px solid var(--border-neon-bright);
+            border-radius: 16px;
+            padding: 1.8rem;
+            box-shadow: var(--shadow-heavy);
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .gematria-result-panel:hover {
+            box-shadow: 0 0 45px rgba(0, 255, 136, 0.35);
+        }
+
+        .letter-pictograph-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid var(--border-neon);
+            border-radius: 6px;
+            padding: 0.25rem 0.55rem;
+            margin: 0.2rem 0.3rem 0.2rem 0;
+            font-size: 0.8rem;
+            color: #ffffff;
+        }
+
+        .letter-pictograph-tag strong {
+            font-family: var(--font-hebrew);
+            font-size: 1.05rem;
+            color: var(--neon-green);
         }
 
         /* Lightbox Modal */
@@ -509,20 +570,13 @@
     <header class="nav-header">
         <div class="brand">
             <i data-lucide="sparkles"></i>
-            YESHUA 33 <span class="hebrew">יֵשׁוּעַ</span>
+            SITE HEBRAICO YESHUA 33 <span class="hebrew" style="font-size: 1.1rem; opacity: 0.85;">עוֹלָם</span>
         </div>
         <div class="nav-links">
             <a class="nav-link" href="#nova-terra">NOVA TERRA</a>
-            <a class="nav-link" href="#secao-louvor-video">VÍDEOS & LOUVOR</a>
             <a class="nav-link" href="#simbolos">SÍMBOLOS HEBRAICOS</a>
             <a class="nav-link" href="#galeria">GALERIA SACRA</a>
             <a class="nav-link" href="#gematria">GEMATRIA</a>
-            <button id="btn-sound" class="btn-neon btn-audio">
-                <i data-lucide="volume-2"></i> 528Hz SOM SAGRADO
-            </button>
-            <button id="btn-kodoish" class="btn-neon" onclick="switchVideo('lHdr7akL7xg', 'Yeshua - Frei Gilson')" style="border-color: var(--neon-green); background: rgba(0, 255, 136, 0.12); box-shadow: var(--shadow-neon);">
-                <span style="font-family: var(--font-hebrew); font-size: 1.3rem; color: #ffffff; text-shadow: 0 0 8px var(--neon-green);">יֵשׁוּעַ</span> LOUVOR YESHUA
-            </button>
         </div>
     </header>
 
@@ -533,7 +587,7 @@
         </div>
 
         <h1 class="hero-title">
-            SITE HEBRAICO <span>YESHUA 33</span>
+            NOVA TERRA <span>& ETERNIDADE</span>
         </h1>
 
         <h2 class="hero-subtitle">
@@ -542,7 +596,7 @@
 
         <!-- Main Banner Image -->
         <div class="hero-image-wrapper">
-            <img src="./IMAGENS/CEU.png" onerror="if(this.src.includes('IMAGENS/')){this.src=this.src.replace('IMAGENS/','');}" alt="DEUS CRIADOR — VISÃO DA NOVA TERRA" id="main-hero-img">
+            <img src="./IMAGENS/CEU.png" alt="DEUS CRIADOR — VISÃO DA NOVA TERRA" id="main-hero-img">
             <div class="hero-image-overlay">
                 <div>
                     <div class="overlay-title">A GLÓRIA DO REINO VINDOURO</div>
@@ -566,58 +620,7 @@
         </div>
     </section>
 
-    <!-- Embedded Louvor YESHUA Frei Gilson Video Player Section -->
-    <section id="secao-louvor-video" class="container" style="display: block; margin-bottom: 3rem;">
-        <div class="glass-card" style="border: 2px solid var(--border-neon-bright); box-shadow: var(--shadow-heavy); position: relative;">
 
-            <div style="text-align: center; margin-bottom: 1.5rem;">
-                <div style="font-family: var(--font-hebrew); font-size: 2.8rem; color: var(--neon-green); text-shadow: 0 0 25px var(--neon-green); margin-bottom: 0.3rem;">
-                    יֵשׁוּעַ • FREI GILSON (SOM DO MONTE)
-                </div>
-                <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: #ffffff; letter-spacing: 2px;">
-                    🎵 YESHUA — FREI GILSON (SOM DO MONTE)
-                </h3>
-                <p style="color: var(--neon-mint); font-size: 0.95rem; margin-top: 0.3rem;">
-                    ✨ Louvor Sagrado & Vídeo Oficial
-                </p>
-            </div>
-
-            <!-- In-Page Responsive 16:9 Video Player Embed -->
-            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px; border: 2px solid var(--border-neon); box-shadow: var(--shadow-neon); margin-bottom: 1.5rem; background: #000;">
-                <iframe 
-                    id="inpage-kodoish-iframe"
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
-                    src="https://www.youtube-nocookie.com/embed/lHdr7akL7xg?rel=0&enablejsapi=1" 
-                    title="YESHUA — Frei Gilson (Som do Monte)" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    playsinline
-                    allowfullscreen>
-                </iframe>
-            </div>
-
-            <!-- Hebrew Meaning Grid & Direct Link -->
-            <div class="grid-3" style="font-size: 0.85rem; text-align: center; margin-bottom: 1rem;">
-                <div style="background: rgba(0,255,136,0.06); border: 1px solid var(--border-neon); padding: 0.8rem; border-radius: 8px;">
-                    <strong style="color: var(--neon-green); font-family: var(--font-hebrew); font-size: 1.3rem; display: block;">יֵשׁוּעַ (Yeshua)</strong>
-                    <span style="color: var(--text-muted);">Salvação / O Rei Redentor</span>
-                </div>
-                <div style="background: rgba(0,255,136,0.06); border: 1px solid var(--border-neon); padding: 0.8rem; border-radius: 8px;">
-                    <strong style="color: var(--neon-green); font-family: var(--font-hebrew); font-size: 1.3rem; display: block;">קָדוֹשׁ (Kodoish)</strong>
-                    <span style="color: var(--text-muted);">Santo / Consagrado</span>
-                </div>
-                <div style="background: rgba(0,255,136,0.06); border: 1px solid var(--border-neon); padding: 0.8rem; border-radius: 8px;">
-                    <strong style="color: var(--neon-green); font-family: var(--font-hebrew); font-size: 1.3rem; display: block;">אֲדֹנָי (Adonai)</strong>
-                    <span style="color: var(--text-muted);">Senhor Supremo</span>
-                </div>
-            </div>
-
-            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                <a id="btn-direct-yt" href="https://www.youtube.com/watch?v=lHdr7akL7xg" target="_blank" class="btn-neon" style="font-size: 0.85rem; text-decoration: none;">
-                    <i data-lucide="external-link"></i> Abrir YESHUA (Frei Gilson) no YouTube Oficial
-                </a>
-            </div>
-        </div>
-    </section>
 
     <!-- Hebrew Sacred Lexicon & Symbols Section -->
     <section id="simbolos" class="container">
@@ -744,13 +747,30 @@
                         🧮 CALCULADORA & TRANSLITERADOR DE GEMATRIA HEBRAICA
                     </h3>
                     <p style="color: var(--text-muted); font-size: 0.9rem;">
-                        <strong>Como funciona:</strong> Digite normalmente no seu <u>teclado brasileiro</u> (ex: <i>DEUS</i>, <i>PAZ</i>, <i>AMOR</i>) ou cole letras em Hebraico! O motor converte automaticamente cada letra em caracteres hebraicos e calcula a soma sagrada.
+                        <strong>Como funciona:</strong> Digite no seu teclado em Português ou cole palavras em Hebraico! O motor revela instantaneamente a conversão em hebraico, a soma da gematria e <u>o significado completo da palavra em português na janela ao lado</u>.
                     </p>
+
+                    <!-- Atalhos rápidos com palavras sagradas -->
+                    <div style="margin-top: 0.3rem;">
+                        <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; display: block; margin-bottom: 0.4rem;">
+                            ✨ TOQUE PARA TESTAR PALAVRAS SAGRADAS:
+                        </span>
+                        <div class="quick-chips-wrapper">
+                            <button class="quick-chip" onclick="setGematriaWord('YESHUA')">👑 YESHUA (ישוע)</button>
+                            <button class="quick-chip" onclick="setGematriaWord('SHALOM')">🕊️ SHALOM (Paz)</button>
+                            <button class="quick-chip" onclick="setGematriaWord('YAHWEH')">✨ YAHWEH (יהוה)</button>
+                            <button class="quick-chip" onclick="setGematriaWord('AHAVA')">❤️ AHAVA (Amor)</button>
+                            <button class="quick-chip" onclick="setGematriaWord('CHAI')">🌿 CHAI (Vida)</button>
+                            <button class="quick-chip" onclick="setGematriaWord('EMET')">⚖️ EMET (Verdade)</button>
+                            <button class="quick-chip" onclick="setGematriaWord('KADOSH')">🔥 KADOSH (Santo)</button>
+                            <button class="quick-chip" onclick="setGematriaWord('OLAM')">🌌 OLAM (Eternidade)</button>
+                        </div>
+                    </div>
 
                     <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem;">
                         <label style="font-size: 0.8rem; color: var(--neon-mint); text-transform: uppercase; font-weight: 700; letter-spacing: 1px;">Digite aqui com seu teclado (Português ou Hebraico):</label>
                         <div style="display: flex; gap: 0.5rem; align-items: center;">
-                            <input type="text" id="gematria-input" oninput="calculateGematriaFromInput(this.value)" style="flex: 1; background: rgba(0,255,136,0.08); border: 2px solid var(--border-neon-bright); padding: 0.9rem; border-radius: 10px; color: #ffffff; font-size: 1.3rem; outline: none; box-shadow: var(--shadow-neon);" placeholder="Digite algo ex: PAZ ou DEUS..." autofocus>
+                            <input type="text" id="gematria-input" oninput="calculateGematriaFromInput(this.value)" style="flex: 1; background: rgba(0,255,136,0.08); border: 2px solid var(--border-neon-bright); padding: 0.9rem; border-radius: 10px; color: #ffffff; font-size: 1.3rem; outline: none; box-shadow: var(--shadow-neon);" placeholder="Digite ex: YESHUA, PAZ, DEUS, AMOR..." autofocus>
                             <button class="btn-neon" onclick="clearGematria()" style="padding: 0.9rem 1.2rem;">LIMPAR</button>
                         </div>
                     </div>
@@ -767,7 +787,7 @@
                     </div>
 
                     <div class="hebrew-keyboard">
-                        <span style="width: 100%; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.3rem;">OU CLIQUE NAS LETRA HEBRAICAS INDIVIDUAIS:</span>
+                        <span style="width: 100%; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.3rem;">OU CLIQUE NAS LETRAS HEBRAICAS INDIVIDUAIS:</span>
                         <button class="key-btn" onclick="addLetter('א')">א (1)</button>
                         <button class="key-btn" onclick="addLetter('ב')">ב (2)</button>
                         <button class="key-btn" onclick="addLetter('ג')">ג (3)</button>
@@ -793,10 +813,68 @@
                     </div>
                 </div>
 
-                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; background: rgba(0,255,136,0.03); border: 1px solid var(--border-neon); border-radius: 12px; padding: 2rem; text-align: center;">
-                    <div style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem;">VALOR NUMÉRICO TOTAL</div>
-                    <div id="gematria-val" style="font-family: var(--font-tech); font-size: 4rem; color: var(--neon-green); text-shadow: 0 0 25px var(--neon-green); font-weight: 900;">0</div>
-                    <div id="gematria-meaning" style="font-size: 0.95rem; color: var(--neon-mint); margin-top: 1rem; line-height: 1.5; font-weight: 600;">Digite uma palavra acima para ver seu código sagrado.</div>
+                <!-- JANELA AO LADO: SIGNIFICADO DA PALAVRA HEBRAICA EM PORTUGUÊS & REVELAÇÃO -->
+                <div class="gematria-result-panel">
+                    <!-- Header da janela de resultados -->
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-neon); padding-bottom: 0.8rem;">
+                        <span style="font-size: 0.82rem; color: var(--neon-green); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; display: flex; align-items: center; gap: 0.4rem;">
+                            📜 SIGNIFICADO EM PORTUGUÊS
+                        </span>
+                        <span style="font-size: 0.72rem; background: rgba(0,255,136,0.15); color: var(--neon-mint); padding: 0.2rem 0.6rem; border-radius: 20px; border: 1px solid var(--border-neon); font-weight: 700; letter-spacing: 1px;">
+                            YESHUA 33
+                        </span>
+                    </div>
+
+                    <!-- Bloco do Valor Gematria Numérico -->
+                    <div style="text-align: center; background: rgba(0, 255, 136, 0.05); border: 1px solid var(--border-neon); border-radius: 12px; padding: 1.2rem 0.8rem; box-shadow: inset 0 0 15px rgba(0,255,136,0.06);">
+                        <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">VALOR NUMÉRICO TOTAL (GEMATRIA)</div>
+                        <div id="gematria-val" style="font-family: var(--font-tech); font-size: 3.8rem; color: var(--neon-green); text-shadow: 0 0 25px var(--neon-green); font-weight: 900; line-height: 1.1; margin: 0.4rem 0;">0</div>
+                        <div id="gematria-equation-badge" style="font-size: 0.8rem; color: var(--neon-mint); font-family: monospace;">Aguardando digitação...</div>
+                    </div>
+
+                    <!-- Bloco Principal do Significado em Português -->
+                    <div id="hebrew-meaning-card" style="background: rgba(0,0,0,0.55); border: 1px solid var(--border-neon); border-radius: 12px; padding: 1.2rem; display: flex; flex-direction: column; gap: 0.9rem; text-align: left;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed rgba(0,255,136,0.25); padding-bottom: 0.5rem;">
+                            <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">PALAVRA / RAIZ HEBRAICA:</span>
+                            <span id="gematria-word-title" style="font-family: var(--font-hebrew); font-size: 1.5rem; color: #ffffff; direction: rtl; text-shadow: 0 0 10px var(--neon-green);">—</span>
+                        </div>
+
+                        <!-- Significado Destaque em Português -->
+                        <div>
+                            <div style="font-size: 0.75rem; color: var(--neon-green); text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 0.3rem; font-weight: 800;">
+                                📖 SIGNIFICADO DA PALAVRA EM PORTUGUÊS:
+                            </div>
+                            <div id="gematria-pt-translation" style="font-size: 1.15rem; color: #ffffff; font-weight: 700; background: linear-gradient(90deg, rgba(0,255,136,0.18), rgba(0,255,136,0.02)); padding: 0.7rem 0.9rem; border-left: 4px solid var(--neon-green); border-radius: 6px; line-height: 1.5;">
+                                Digite qualquer palavra ou clique em um dos exemplos acima para ver a revelação da palavra em português.
+                            </div>
+                        </div>
+
+                        <!-- Explicação Profética e Bíblica -->
+                        <div>
+                            <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.3rem; font-weight: 700;">
+                                📜 REVELAÇÃO ESPIRITUAL & PROFÉTICA:
+                            </div>
+                            <div id="gematria-meaning" style="font-size: 0.92rem; color: var(--neon-mint); line-height: 1.55; font-weight: 500;">
+                                O sistema identifica termos bíblicos sagrados, nomes divinos e raízes do hebraico antigo, trazendo luz sobre seu mistério e conexão com a Eternidade.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bloco de Significado Pictográfico das Letras Hebraicas -->
+                    <div id="gematria-pictographic-box" style="background: rgba(0, 255, 136, 0.03); border: 1px dashed var(--border-neon); border-radius: 12px; padding: 1rem; text-align: left;">
+                        <div style="font-size: 0.75rem; color: var(--neon-green); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem;">
+                            <span>🔤 SIGNIFICADO PICTOGRÁFICO DE CADA LETRA:</span>
+                        </div>
+                        <div id="gematria-letters-details" style="font-size: 0.85rem; color: #d1fae5; line-height: 1.5;">
+                            Cada letra hebraica é um pictograma sagrado que conta uma história da Redenção.
+                        </div>
+                    </div>
+
+                    <!-- Conexões Gematrias Espirituais -->
+                    <div id="gematria-connections-box" style="display: none; background: rgba(0, 255, 136, 0.08); border-left: 3px solid var(--neon-green); border-radius: 8px; padding: 0.8rem; text-align: left;">
+                        <div style="font-size: 0.75rem; color: var(--neon-green); font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">🔗 CONEXÃO SAGRADA POR GEMATRIA:</div>
+                        <div id="gematria-connections-text" style="font-size: 0.88rem; color: #ffffff; margin-top: 0.3rem; line-height: 1.45;"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -859,56 +937,7 @@
         }
         setInterval(drawMatrix, 45);
 
-        // 2. Audio Generator (528 Hz Miraculous Frequency via Web Audio API)
-        let audioCtx = null;
-        let oscillator = null;
-        let gainNode = null;
-        let isPlaying = false;
-
-        document.getElementById('btn-sound').addEventListener('click', async () => {
-            const btn = document.getElementById('btn-sound');
-
-            if (!isPlaying) {
-                if (!audioCtx) {
-                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-                }
-                if (audioCtx.state === 'suspended') {
-                    await audioCtx.resume();
-                }
-                oscillator = audioCtx.createOscillator();
-                gainNode = audioCtx.createGain();
-
-                oscillator.type = 'sine';
-                oscillator.frequency.setValueAtTime(528, audioCtx.currentTime); // 528Hz Solfeggio
-
-                gainNode.gain.setValueAtTime(0.01, audioCtx.currentTime);
-                gainNode.gain.exponentialRampToValueAtTime(0.12, audioCtx.currentTime + 2);
-
-                oscillator.connect(gainNode);
-                gainNode.connect(audioCtx.destination);
-
-                oscillator.start();
-                isPlaying = true;
-                btn.innerHTML = `<i data-lucide="volume-x"></i> PARAR SOM (528Hz)`;
-                btn.style.background = 'var(--neon-green)';
-                btn.style.color = '#040806';
-                lucide.createIcons();
-            } else {
-                if (gainNode) {
-                    gainNode.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 1);
-                    setTimeout(() => {
-                        try { oscillator.stop(); } catch(e){}
-                        isPlaying = false;
-                        btn.innerHTML = `<i data-lucide="volume-2"></i> 528Hz SOM SAGRADO`;
-                        btn.style.background = 'rgba(0, 255, 136, 0.15)';
-                        btn.style.color = 'var(--neon-green)';
-                        lucide.createIcons();
-                    }, 1000);
-                }
-            }
-        });
-
-        // 3. Promise Generator
+        // 2. Promise Generator
         const promises = [
             { text: '"Vi um novo céu e uma nova terra. Porque já o primeiro céu e a primeira terra passaram, e o mar já não existe. E Deus limpará de seus olhos toda a lágrima; e não haverá mais morte, nem pranto, nem clamor, nem dor; porque já as primeiras coisas são passadas."', ref: 'Apocalipse 21:1, 4' },
             { text: '"A cidade não necessita de sol nem de lua para que nela brilhem, porque a glória de Deus a ilumina, e o Cordeiro é a sua lâmpada. As nações andarão à sua luz, e os reis da terra trarão para ela a sua glória."', ref: 'Apocalipse 21:23-24' },
@@ -925,9 +954,9 @@
             display.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         });
 
-        // 4. Gematria Transliteration & Calculation Engine
+        // 4. Gematria Transliteration & Calculation Engine com Dicionário Hebraico-Português
         const HEBREW_GEMATRIA_MAP = {
-            // Direct Hebrew Letter Values
+            // Alfabeto Hebraico com Valores Numéricos e Nomes
             'א': { hebrew: 'א', val: 1, name: 'Aleph' },
             'ב': { hebrew: 'ב', val: 2, name: 'Bet' },
             'ג': { hebrew: 'ג', val: 3, name: 'Gimel' },
@@ -939,106 +968,656 @@
             'ט': { hebrew: 'ט', val: 9, name: 'Tet' },
             'י': { hebrew: 'י', val: 10, name: 'Yod' },
             'כ': { hebrew: 'כ', val: 20, name: 'Kaf' },
-            'ך': { hebrew: 'ך', val: 20, name: 'Kaf Final' },
+            'ך': { hebrew: 'ך', val: 20, name: 'Kaf Sofit' },
             'ל': { hebrew: 'ל', val: 30, name: 'Lamed' },
             'מ': { hebrew: 'מ', val: 40, name: 'Mem' },
-            'ם': { hebrew: 'ם', val: 40, name: 'Mem Final' },
+            'ם': { hebrew: 'ם', val: 40, name: 'Mem Sofit' },
             'נ': { hebrew: 'נ', val: 50, name: 'Nun' },
-            'ן': { hebrew: 'ן', val: 50, name: 'Nun Final' },
+            'ן': { hebrew: 'ן', val: 50, name: 'Nun Sofit' },
             'ס': { hebrew: 'ס', val: 60, name: 'Samech' },
             'ע': { hebrew: 'ע', val: 70, name: 'Ayin' },
             'פ': { hebrew: 'פ', val: 80, name: 'Pe' },
-            'ף': { hebrew: 'ף', val: 80, name: 'Pe Final' },
+            'ף': { hebrew: 'ף', val: 80, name: 'Pe Sofit' },
             'צ': { hebrew: 'צ', val: 90, name: 'Tzadi' },
-            'ץ': { hebrew: 'ץ', val: 90, name: 'Tzadi Final' },
+            'ץ': { hebrew: 'ץ', val: 90, name: 'Tzadi Sofit' },
             'ק': { hebrew: 'ק', val: 100, name: 'Kof' },
             'ר': { hebrew: 'ר', val: 200, name: 'Resh' },
             'ש': { hebrew: 'ש', val: 300, name: 'Shin' },
             'ת': { hebrew: 'ת', val: 400, name: 'Tav' },
 
-            // Phonetic Mapping for Brazilian / Latin QWERTY Keyboards
-            'a': { hebrew: 'א', val: 1 },
-            'b': { hebrew: 'ב', val: 2 },
-            'c': { hebrew: 'כ', val: 20 },
-            'd': { hebrew: 'ד', val: 4 },
-            'e': { hebrew: 'ה', val: 5 },
-            'f': { hebrew: 'פ', val: 80 },
-            'g': { hebrew: 'ג', val: 3 },
-            'h': { hebrew: 'ה', val: 5 },
-            'i': { hebrew: 'י', val: 10 },
-            'j': { hebrew: 'י', val: 10 },
-            'k': { hebrew: 'ק', val: 100 },
-            'l': { hebrew: 'ל', val: 30 },
-            'm': { hebrew: 'מ', val: 40 },
-            'n': { hebrew: 'נ', val: 50 },
-            'o': { hebrew: 'ו', val: 6 },
-            'p': { hebrew: 'פ', val: 80 },
-            'q': { hebrew: 'ק', val: 100 },
-            'r': { hebrew: 'ר', val: 200 },
-            's': { hebrew: 'ס', val: 60 },
-            't': { hebrew: 'ת', val: 400 },
-            'u': { hebrew: 'ו', val: 6 },
-            'v': { hebrew: 'ו', val: 6 },
-            'w': { hebrew: 'ו', val: 6 },
-            'x': { hebrew: 'ש', val: 300 },
-            'y': { hebrew: 'י', val: 10 },
-            'z': { hebrew: 'ז', val: 7 }
+            // Mapeamento Fonético Teclado Brasileiro QWERTY -> Letra Hebraica
+            'a': { hebrew: 'א', val: 1, name: 'Aleph' },
+            'b': { hebrew: 'ב', val: 2, name: 'Bet' },
+            'c': { hebrew: 'כ', val: 20, name: 'Kaf' },
+            'd': { hebrew: 'ד', val: 4, name: 'Dalet' },
+            'e': { hebrew: 'ה', val: 5, name: 'Hei' },
+            'f': { hebrew: 'פ', val: 80, name: 'Pe' },
+            'g': { hebrew: 'ג', val: 3, name: 'Gimel' },
+            'h': { hebrew: 'ה', val: 5, name: 'Hei' },
+            'i': { hebrew: 'י', val: 10, name: 'Yod' },
+            'j': { hebrew: 'י', val: 10, name: 'Yod' },
+            'k': { hebrew: 'ק', val: 100, name: 'Kof' },
+            'l': { hebrew: 'ל', val: 30, name: 'Lamed' },
+            'm': { hebrew: 'מ', val: 40, name: 'Mem' },
+            'n': { hebrew: 'נ', val: 50, name: 'Nun' },
+            'o': { hebrew: 'ו', val: 6, name: 'Vav' },
+            'p': { hebrew: 'פ', val: 80, name: 'Pe' },
+            'q': { hebrew: 'ק', val: 100, name: 'Kof' },
+            'r': { hebrew: 'ר', val: 200, name: 'Resh' },
+            's': { hebrew: 'ס', val: 60, name: 'Samech' },
+            't': { hebrew: 'ת', val: 400, name: 'Tav' },
+            'u': { hebrew: 'ו', val: 6, name: 'Vav' },
+            'v': { hebrew: 'ו', val: 6, name: 'Vav' },
+            'w': { hebrew: 'ו', val: 6, name: 'Vav' },
+            'x': { hebrew: 'ש', val: 300, name: 'Shin' },
+            'y': { hebrew: 'י', val: 10, name: 'Yod' },
+            'z': { hebrew: 'ז', val: 7, name: 'Zayin' },
+            'á': { hebrew: 'א', val: 1, name: 'Aleph' },
+            'à': { hebrew: 'א', val: 1, name: 'Aleph' },
+            'â': { hebrew: 'א', val: 1, name: 'Aleph' },
+            'ã': { hebrew: 'א', val: 1, name: 'Aleph' },
+            'é': { hebrew: 'ה', val: 5, name: 'Hei' },
+            'ê': { hebrew: 'ה', val: 5, name: 'Hei' },
+            'í': { hebrew: 'י', val: 10, name: 'Yod' },
+            'ó': { hebrew: 'ו', val: 6, name: 'Vav' },
+            'ô': { hebrew: 'ו', val: 6, name: 'Vav' },
+            'õ': { hebrew: 'ו', val: 6, name: 'Vav' },
+            'ú': { hebrew: 'ו', val: 6, name: 'Vav' },
+            'ç': { hebrew: 'ס', val: 60, name: 'Samech' }
         };
 
+        // Detalhes Pictográficos Ancestrais de Cada Letra Hebraica em Português
+        const HEBREW_LETTER_DETAILS = {
+            'א': { name: 'Aleph (1)', picto: 'Boi / Força / Soberano', meaning: 'Representa Deus Pai, o Líder Supremo e o Princípio Eterno de tudo.' },
+            'ב': { name: 'Bet (2)', picto: 'Tenda / Casa / Família', meaning: 'Representa o Filho que constrói a Casa de Deus e a morada do Espírito.' },
+            'ג': { name: 'Gimel (3)', picto: 'Camelo / Provisão / Jornada', meaning: 'Representa a graça que caminha, a elevação espiritual e o Espírito Santo.' },
+            'ד': { name: 'Dalet (4)', picto: 'Porta / Passagem / Humildade', meaning: 'A porta de entrada da salvação, humildade perante o Altíssimo.' },
+            'ה': { name: 'Hei (5)', picto: 'Janela / Fôlego / Revelação', meaning: 'O sopro do Espírito Santo, a graça divina e a luz do Céu revelada.' },
+            'ו': { name: 'Vav (6)', picto: 'Prego / Conexão / Elo', meaning: 'O elo que conecta Céu e Terra, a redenção de Yeshua que reconcilia o homem a Deus.' },
+            'ז': { name: 'Zayin (7)', picto: 'Espada / Alimento / Descanso', meaning: 'A Palavra de Deus viva e eficaz, a plenitude do descanso sabático.' },
+            'ח': { name: 'Chet (8)', picto: 'Cerca / Proteção / Aliança', meaning: 'O santuário protegido da vida nova (Chai) e da aliança indestrutível.' },
+            'ט': { name: 'Tet (9)', picto: 'Cesto / O Bem Escondido', meaning: 'A bondade secreta do Criador e os tesouros da graça divina.' },
+            'י': { name: 'Yod (10)', picto: 'Mão Divina / Poder / Ação', meaning: 'A menor letra que sustenta todas as outras; a mão soberana do Criador.' },
+            'כ': { name: 'Kaf (20)', picto: 'Palma da Mão / Cobertura / Coroa', meaning: 'A bênção do Pai, a mão que ungiu o Messias e coroa o redimido.' },
+            'ך': { name: 'Kaf Final (20)', picto: 'Palma Estendida / Realeza', meaning: 'A soberania completa e o acolhimento eterno nos braços de Deus.' },
+            'ל': { name: 'Lamed (30)', picto: 'Cajado de Pastor / Autoridade / Ensino', meaning: 'O Bom Pastor que conduz as ovelhas, a autoridade da sabedoria sagrada.' },
+            'מ': { name: 'Mem (40)', picto: 'Águas Vivas / Torrente / Vida', meaning: 'As águas da revelação celestial e a purificação pelo Espírito.' },
+            'ם': { name: 'Mem Final (40)', picto: 'Águas Profundas / Eternidade', meaning: 'A plenitude dos mistérios de Deus ocultos e revelados na Nova Terra.' },
+            'נ': { name: 'Nun (50)', picto: 'Peixe / Semente / Continuidade', meaning: 'A vida eterna que não cessa, a linhagem messiânica da salvação.' },
+            'ן': { name: 'Nun Final (50)', picto: 'Semente Germinada / Vitória', meaning: 'A ressurreição para a vida eterna por meio de Yeshua.' },
+            'ס': { name: 'Samech (60)', picto: 'Escudo / Suporte / Amparo', meaning: 'O apoio divino que sustenta os caídos e cerca os justos com graça.' },
+            'ע': { name: 'Ayin (70)', picto: 'Olho / Discernimento / Visão Espiritual', meaning: 'A visão espiritual que enxerga o Reino invisível além do véu.' },
+            'פ': { name: 'Pe (80)', picto: 'Boca / Verbo / Palavra Viva', meaning: 'O poder criador da Palavra falada por Deus e o louvor redimido.' },
+            'ף': { name: 'Pe Final (80)', picto: 'Boca Aberta / Proclamação', meaning: 'O decreto final da vitória do Cordeiro na consumação dos tempos.' },
+            'צ': { name: 'Tzadi (90)', picto: 'Anzol / Homem Justo / Retidão', meaning: 'A retidão (Tzedakah) e o Justo que vive pela fé.' },
+            'ץ': { name: 'Tzadi Final (90)', picto: 'Justiça Cumprida', meaning: 'O Messias Justo que justifica a muitos e estabelece o Reino eterno.' },
+            'ק': { name: 'Kof (100)', picto: 'Fundo da Agulha / Santidade / Separação', meaning: 'A pureza e santidade (Kedushah) que separa o profano do sagrado.' },
+            'ר': { name: 'Resh (200)', picto: 'Cabeça / Primazia / O Começo', meaning: 'A mente espiritual renovada, a liderança e primazia de Deus.' },
+            'ש': { name: 'Shin (300)', picto: 'Fogo Divino / El Shaddai / Dentes', meaning: 'O fogo purificador da glória do Altíssimo e o Deus Todo-Poderoso.' },
+            'ת': { name: 'Tav (400)', picto: 'Sinal / Cruz / Aliança Eterna', meaning: 'O selo da Verdade (Emet), a Aliança selada na Cruz e a Eternidade.' }
+        };
+
+        // Dicionário Léxico Sagrado Hebraico-Português
+        const HEBREW_PORTUGUESE_DICTIONARY = {
+            'yeshua': {
+                hebrew: 'יֵשׁוּעַ',
+                translit: 'Yeshua (Jesus)',
+                gematria: 386,
+                ptMeaning: 'O Senhor é Salvação • Salvador • Redentor',
+                spiritual: 'Yeshua é a personificação viva da Salvação e o Nome sobre todo nome. Em YESHUA 33 temos a plenitude da aliança eterna, o sacrifício perfeito na cruz aos 33 anos e a ressurreição gloriosa que nos abre as portas da Nova Terra.',
+                connection: 'Gematria Bíblica 386 = É o mesmo valor exato da palavra מָקוֹר (Makor - "Fonte de Águas Vivas") e da expressão רוּחַ אֱלֹהִים (Ruach Elohim - "O Espírito de Deus")!'
+            },
+            'jesus': {
+                hebrew: 'יֵשׁוּעַ',
+                translit: 'Yeshua (Jesus em Português)',
+                gematria: 386,
+                ptMeaning: 'O Salvador do Mundo • Deus Salva • O Messias',
+                spiritual: 'O nome Jesus em hebraico é Yeshua (derivado de Yehoshua), significando "Yahweh é Salvação". Ele é o Alfa e o Ômega, o Cordeiro que venceu para nos dar a vida eterna.',
+                connection: 'Gematria 386: ישוע = Yod(10) + Shin(300) + Vav(6) + Ayin(70) = 386.'
+            },
+            '33': {
+                hebrew: 'ל"ג',
+                translit: '33 (Lamed-Gimel)',
+                gematria: 33,
+                ptMeaning: 'A Idade da Plenitude Messiânica • O Triunfo da Redenção',
+                spiritual: '33 representa os anos da caminhada terrena de Yeshua até a consagração do novo e vivo caminho. No hebraico bíblico, é composto por Lamed (30 = O Bom Pastor) e Gimel (3 = A Ressurreição ao 3º dia).',
+                connection: 'Selo profético do Projeto YESHUA 33 — A vitória consumada na cruz e a comunhão eterna na Nova Terra.'
+            },
+            'gabriel': {
+                hebrew: 'גַּבְרִיאֵל',
+                translit: 'Gavri\'el (Gabriel)',
+                gematria: 246,
+                ptMeaning: 'Deus é Minha Força • Mensageiro da Promessa e Redenção',
+                spiritual: 'O Arcanjo Gabriel é o mensageiro das revelações mais profundas de Deus, enviado para anunciar o nascimento de Yeshua e o cumprimento da promessa messiânica na plenitude dos tempos.',
+                connection: 'Gematria 246: ג(3) + ב(2) + ר(200) + י(10) + א(1) + ל(30) = 246.'
+            },
+            'shalom': {
+                hebrew: 'שָׁלוֹם',
+                translit: 'Shalom',
+                gematria: 376,
+                ptMeaning: 'Paz Completa • Harmonia Total • Plenitude • Nada Faltando',
+                spiritual: 'Shalom vem da raiz hebraica "Shalem" (perfeição, inteireza). Não é apenas ausência de guerra, mas a presença manifesta de Deus trazendo saúde, paz espiritual, prosperidade de alma e descanso.',
+                connection: 'Yeshua é profetizado em Isaías 9:6 como Sar Shalom (O Príncipe da Paz).'
+            },
+            'paz': {
+                hebrew: 'שָׁלוֹם',
+                translit: 'Shalom (Paz em Hebraico)',
+                gematria: 376,
+                ptMeaning: 'Paz Divina • Reconciliação • Integridade de Vida',
+                spiritual: 'A paz que excede todo o entendimento terreno. Na Nova Terra desfrutaremos de Shalom ininterrupto na presença do Criador por toda a Eternidade.',
+                connection: 'Gematria 376: ש(300) + ל(30) + ו(6) + ם(40) = 376.'
+            },
+            'yahweh': {
+                hebrew: 'יהוה',
+                translit: 'YHVH (Yahweh / Adonai)',
+                gematria: 26,
+                ptMeaning: 'O Eterno • Aquele Que É, Que Era e Que Há de Vir',
+                spiritual: 'O Tetragrama Sagrado inefável, o Nome de Deus Pai Criador revelado a Moisés na sarça ardente. Expressa a autoexistência e a misericórdia infinita do Deus Todo-Poderoso.',
+                connection: 'Gematria 26: Yod(10) + Hei(5) + Vav(6) + Hei(5) = 26. É o código divino impresso na estrutura de toda a Criação cósmica!'
+            },
+            'yhwh': {
+                hebrew: 'יהוה',
+                translit: 'YHVH (Tetragrama Sagrado)',
+                gematria: 26,
+                ptMeaning: 'O Senhor • O Criador Absoluto • O Nome Inefável',
+                spiritual: 'O Santo Nome do Pai Celestial, revelando que Ele é a fonte de toda a existência visível e invisível.',
+                connection: '26 é a frequência do Amor divino manifestado aos homens.'
+            },
+            'deus': {
+                hebrew: 'אֱלֹהִים',
+                translit: 'Elohim (Deus em Hebraico)',
+                gematria: 86,
+                ptMeaning: 'Deus Todo-Poderoso • Soberano Criador do Universo',
+                spiritual: 'Elohim é o primeiro nome de Deus na Bíblia (Gênesis 1:1). Demonstra a força ilimitada, justiça suprema e majestade que ordenou os céus e a terra.',
+                connection: 'Gematria 86: Possui o mesmo valor numérico exato de הַטֶּבַע (HaTeva - "A Natureza Criada") e הללויה (Halleluyah - "Louvai a Deus").'
+            },
+            'elohim': {
+                hebrew: 'אֱלֹהִים',
+                translit: 'Elohim',
+                gematria: 86,
+                ptMeaning: 'O Criador Supremo • Juiz Celestial • Poder Soberano',
+                spiritual: 'A revelação do Pai Criador cuja palavra dá origem a universos, galáxias e a vida dos seres humanos.',
+                connection: 'Gematria 86 = א(1) + ל(30) + ה(5) + י(10) + ם(40).'
+            },
+            'amor': {
+                hebrew: 'אַהֲבָה',
+                translit: 'Ahava (Amor em Hebraico)',
+                gematria: 13,
+                ptMeaning: 'Amor Incondicional • Doação Própria • Graça Altruísta',
+                spiritual: 'A raiz hebraica central de Ahava é "Hav", que significa "dar". O verdadeiro amor não é possessão, mas doação incondicional de si mesmo. Deus é amor e deu Seu Filho único por nós.',
+                connection: 'Gematria 13: Possui o mesmo valor sagrado da palavra אֶחָד (Echad - "Unidade"). Amor e Unidade são o mesmo! 13 (Ahava) + 13 (Echad) = 26 (YHVH, o Nome de Deus)!'
+            },
+            'ahava': {
+                hebrew: 'אַהֲבָה',
+                translit: 'Ahava',
+                gematria: 13,
+                ptMeaning: 'Amor Puro • Entrega Divina • Comunhão Perfeita',
+                spiritual: 'O vínculo da perfeição que sustenta a comunhão com Deus Pai e o próximo.',
+                connection: 'Gematria 13: א(1) + ה(5) + ב(2) + ה(5) = 13.'
+            },
+            'vida': {
+                hebrew: 'חַי',
+                translit: 'Chai (Vida em Hebraico)',
+                gematria: 18,
+                ptMeaning: 'Vida Abundante • Fôlego Vital • Imortalidade na Eternidade',
+                spiritual: 'Chai é o símbolo sagrado da vida concedida por Deus. Na Nova Terra teremos a Árvore da Vida produzindo frutos de cura e imortalidade por toda a eternidade.',
+                connection: 'Gematria 18: Formado por Chet(8) e Yod(10). No judaísmo bíblico, 18 é sinônimo de vida e bênção multiplicada.'
+            },
+            'chai': {
+                hebrew: 'חַי',
+                translit: 'Chai',
+                gematria: 18,
+                ptMeaning: 'Vivente • A Força da Vida • Bem-Aventurança',
+                spiritual: 'O poder da vida que venceu a sepultura. Yeshua disse: "Eu sou o caminho, a verdade e a VIDA".',
+                connection: 'Gematria 18: ח(8) + י(10) = 18.'
+            },
+            'chayim': {
+                hebrew: 'חַיִּים',
+                translit: 'Chayim',
+                gematria: 68,
+                ptMeaning: 'Vidas no Plural • Vida Plena e Eterna',
+                spiritual: 'Em hebraico a palavra vida é sempre plural, pois a vida terrena e a vida celestial estão entrelaçadas.',
+                connection: 'Conexão com Etz HaChayim (A Árvore da Vida).'
+            },
+            'verdade': {
+                hebrew: 'אֱמֶת',
+                translit: 'Emet (Verdade em Hebraico)',
+                gematria: 441,
+                ptMeaning: 'Verdade Inabalável • Firmeza Eterna • Fidelidade Absoluta',
+                spiritual: 'Emet é formada pela primeira letra (Aleph), a letra do meio (Mem) e a última letra (Tav) do alfabeto hebraico. Mostra que a Verdade divina abrange todo o princípio, meio e fim da história humana.',
+                connection: 'Gematria 441 = 21 x 21 (sendo 21 o valor de אֶהְיֶה - "Ehyeh / Eu Sou o Que Sou" em Êxodo 3:14).'
+            },
+            'emet': {
+                hebrew: 'אֱמֶת',
+                translit: 'Emet',
+                gematria: 441,
+                ptMeaning: 'Verdade • Fidelidade • Confiabilidade Divina',
+                spiritual: 'A Palavra de Deus é a Verdade que liberta e permanece eternamente imutável.',
+                connection: 'Gematria 441: א(1) + מ(40) + ת(400) = 441.'
+            },
+            'santo': {
+                hebrew: 'קָדוֹשׁ',
+                translit: 'Kadosh (Santo em Hebraico)',
+                gematria: 410,
+                ptMeaning: 'Santo • Separado para Deus • Puro • Consagrado',
+                spiritual: 'A santidade e transcendência de Deus Pai Criador. O cântico celestial incessante dos Serafins: "Kodoish, Kodoish, Kodoish Adonai Tzevaot" (Santo, Santo, Santo é o Senhor dos Exércitos).',
+                connection: 'Gematria 410: Possui o mesmo valor numérico de שְׁמַע (Shema - "Ouve ó Israel").'
+            },
+            'kadosh': {
+                hebrew: 'קָדוֹשׁ',
+                translit: 'Kadosh',
+                gematria: 410,
+                ptMeaning: 'Santidade • Consagração • Pureza do Trono Celestial',
+                spiritual: 'Ser santo é refletir a luz e o caráter imaculado de Yeshua e do Pai Celestial.',
+                connection: 'Gematria 410: ק(100) + ד(4) + ו(6) + ש(300) = 410.'
+            },
+            'olam': {
+                hebrew: 'עוֹלָם',
+                translit: 'Olam',
+                gematria: 146,
+                ptMeaning: 'Eternidade • Infinito Além do Tempo • O Universo Criado',
+                spiritual: 'Representa a Eternidade de Deus Pai. Deus colocou o anseio pela Eternidade no íntimo do ser humano (Eclesiastes 3:11) para que busquemos a vida eterna na Nova Terra.',
+                connection: 'Presente no título de Deus como El Olam (O Deus da Eternidade).'
+            },
+            'eternidade': {
+                hebrew: 'עוֹלָם / נֶצַח',
+                translit: 'Olam / Netzach',
+                gematria: 146,
+                ptMeaning: 'Eternidade • Vitória Perpétua • Vida Sem Fim',
+                spiritual: 'O propósito supremo do Criador: vivermos em plena comunhão com Deus Pai por toda a Eternidade, onde não haverá morte, dor, pranto ou fome.',
+                connection: 'Gematria 146: ע(70) + ו(6) + ל(30) + ם(40) = 146.'
+            },
+            'ruach': {
+                hebrew: 'רוּחַ',
+                translit: 'Ruach',
+                gematria: 214,
+                ptMeaning: 'Espírito • Sopro Divino • Vento Celestial • Fôlego',
+                spiritual: 'O Espírito Santo (Ruach HaKodesh) que pairava sobre a criação e que habita no interior daqueles que aceitam a redenção de Yeshua.',
+                connection: 'Gematria 214: ר(200) + ו(6) + ח(8) = 214.'
+            },
+            'espirito': {
+                hebrew: 'רוּחַ הַקֹּדֶשׁ',
+                translit: 'Ruach HaKodesh (Espírito Santo)',
+                gematria: 214,
+                ptMeaning: 'O Espírito Santo de Deus • Consolador e Guia',
+                spiritual: 'A presença consoladora que regenera o coração humano e nos prepara para habitar a Nova Terra.',
+                connection: 'Gematria 214 de Ruach.'
+            },
+            'or': {
+                hebrew: 'אוֹר',
+                translit: 'Or',
+                gematria: 207,
+                ptMeaning: 'Luz Primordial • Iluminação Espiritual • Esplendor Divino',
+                spiritual: 'O primeiro comando de Deus na Criação: "Yehi Or" (Haja Luz). A Luz de Deus dissipa toda escuridão, confusão e tristeza.',
+                connection: 'Gematria 207: Mesmo valor sagrado de רָז (Raz - "Mistério Revelado"). A luz divina revela os mistérios celestiais!'
+            },
+            'luz': {
+                hebrew: 'אוֹר',
+                translit: 'Or (Luz em Hebraico)',
+                gematria: 207,
+                ptMeaning: 'Luz Celestial • Clareza Divina • Revelação Sagrada',
+                spiritual: 'Yeshua declarou: "Eu sou a Luz do mundo; quem me segue não andará em trevas". Na Nova Terra, a glória de Deus a iluminará!',
+                connection: 'Gematria 207: א(1) + ו(6) + ר(200) = 207.'
+            },
+            'chesed': {
+                hebrew: 'חֶסֶד',
+                translit: 'Chesed',
+                gematria: 72,
+                ptMeaning: 'Graça Imerecida • Misericórdia Leal • Amor Fiel',
+                spiritual: 'A bondade com a qual Deus Pai acolhe Seus filhos arrependidos e os coroa com salvação.',
+                connection: 'Gematria 72: Os 72 atributos sagrados da misericórdia divina.'
+            },
+            'graca': {
+                hebrew: 'חֶסֶד / חֵן',
+                translit: 'Chesed / Chen',
+                gematria: 72,
+                ptMeaning: 'Graça Divina • Favor Imerecido • Misericórdia Redentora',
+                spiritual: 'Pela graça sois salvos, mediante a fé em Yeshua; isso não vem de vós, é dom de Deus.',
+                connection: 'Gematria 72: ח(8) + ס(60) + ד(4) = 72.'
+            },
+            'misericordia': {
+                hebrew: 'רַחֲמִים / חֶסֶד',
+                translit: 'Rachamim / Chesed',
+                gematria: 72,
+                ptMeaning: 'Misericórdia Entranhável • Compaixão Paterna de Deus',
+                spiritual: 'As misericórdias do Senhor se renovam a cada manhã; grande é a Sua fidelidade.',
+                connection: 'Chesed (72) é a chave do amor pactuado de Deus.'
+            },
+            'mashiach': {
+                hebrew: 'מָשִׁיחַ',
+                translit: 'Mashiach (Messias)',
+                gematria: 358,
+                ptMeaning: 'O Ungido de Deus • O Libertador • O Cristo Prometido',
+                spiritual: 'O Messias que veio redimir a humanidade, quebrar as correntes da morte e reinar em justiça.',
+                connection: 'Gematria 358: מ(40) + ש(300) + י(10) + ח(8) = 358. O Messias aniquila o poder do pecado e traz a redenção.'
+            },
+            'messias': {
+                hebrew: 'מָשִׁיחַ',
+                translit: 'Mashiach',
+                gematria: 358,
+                ptMeaning: 'O Rei Ungido • Redentor e Salvador',
+                spiritual: 'Yeshua HaMashiach — Jesus, o Messias Redentor de Israel e das nações.',
+                connection: 'Gematria 358.'
+            },
+            'amen': {
+                hebrew: 'אָמֵן',
+                translit: 'Amen (Amém)',
+                gematria: 91,
+                ptMeaning: 'Assim Seja! • Firmeza • Confirmação • É Verdadeiro',
+                spiritual: 'Acrônimo de "El Melech Neeman" (Deus é um Rei Fiel). Sela com certeza a fé nas promessas do Pai.',
+                connection: 'Gematria 91: Soma milagrosa dos dois nomes mais sagrados de Deus: יהוה (26) + אֲדֹנָי (65) = 91!'
+            },
+            'amem': {
+                hebrew: 'אָמֵן',
+                translit: 'Amen',
+                gematria: 91,
+                ptMeaning: 'Certamente • Assim Seja • Selo de Fé',
+                spiritual: 'Expressão de certeza absoluta nas promessas eternas de Deus Pai.',
+                connection: 'Gematria 91: א(1) + מ(40) + ן(50) = 91.'
+            },
+            'aleluia': {
+                hebrew: 'הַלְלוּיָהּ',
+                translit: 'Halleluyah',
+                gematria: 86,
+                ptMeaning: 'Louvai ao Senhor! • Exaltai a Yahweh com Júbilo!',
+                spiritual: 'O clamor de júbilo eterno cantado no Céu diante do trono de Deus (Apocalipse 19).',
+                connection: 'Gematria 86: Mesmo valor numérico de Elohim (86).'
+            },
+            'torah': {
+                hebrew: 'תּוֹרָה',
+                translit: 'Torah',
+                gematria: 611,
+                ptMeaning: 'Instrução Divina • Direção da Luz • Ensinamento Sagrado',
+                spiritual: 'A revelação do conselho e mandamentos de Deus para viver em retidão e sabedoria.',
+                connection: 'Gematria 611.'
+            },
+            'shabbat': {
+                hebrew: 'שַׁבָּת',
+                translit: 'Shabbat',
+                gematria: 702,
+                ptMeaning: 'Cessação • Descanso Santo • Comunhão e Paz',
+                spiritual: 'O repouso abençoado que prenuncia o descanso eterno dos justos na Nova Terra.',
+                connection: 'Gematria 702.'
+            },
+            'israel': {
+                hebrew: 'יִשְׂרָאֵל',
+                translit: 'Yisrael',
+                gematria: 541,
+                ptMeaning: 'Aquele que Luta com Deus e Prevalece • Príncipe de Deus',
+                spiritual: 'O povo eleito da aliança e a congregação dos redimidos em comunhão com o Pai.',
+                connection: 'Gematria 541.'
+            },
+            'jerusalem': {
+                hebrew: 'יְרוּשָׁלַיִם',
+                translit: 'Yerushalayim',
+                gematria: 596,
+                ptMeaning: 'Cidade da Paz Plena • Morada Sagrada da Glória',
+                spiritual: 'A Nova Jerusalém celestial que descerá do Céu para os redimidos habitarem com Deus.',
+                connection: 'Gematria 596.'
+            },
+            'nova terra': {
+                hebrew: 'אֶרֶץ חָדָשָׁה',
+                translit: 'Eretz Chadasha',
+                gematria: 605,
+                ptMeaning: 'Nova Terra — A Habitação Gloriosa da Eternidade',
+                spiritual: 'A promessa suprema: "Onde não haverá fome nem dor, e viveremos em plena comunhão com Deus Pai Criador por toda a Eternidade Amém...".',
+                connection: 'Apocalipse 21:1-4 e Isaías 65:17.'
+            },
+            'coracao': {
+                hebrew: 'לֵב',
+                translit: 'Lev (Coração em Hebraico)',
+                gematria: 32,
+                ptMeaning: 'Coração • Centro da Vida • Trono dos Sentimentos',
+                spiritual: 'Deus sonda os corações. Quando unimos a primeira letra da Torá (Bet) à última letra (Lamed), temos LEV (Coração). A revelação divina foi dada para transformar o coração do homem.',
+                connection: 'Gematria 32: Corresponde aos 32 caminhos da sabedoria espiritual.'
+            },
+            'lev': {
+                hebrew: 'לֵב',
+                translit: 'Lev',
+                gematria: 32,
+                ptMeaning: 'Coração • Sabedoria Interior • Vida Espiritual',
+                spiritual: 'O santuário interior onde Yeshua habita pela fé.',
+                connection: 'Gematria 32: ל(30) + ב(2) = 32.'
+            }
+        };
+
+        // Função para remover acentos e normalizar
+        function normalizeWordKey(str) {
+            return str.toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .replace(/[^a-z0-9א-ת]/g, '')
+                .trim();
+        }
+
+        // Função acionada ao clicar em chips rápidos de exemplo
+        function setGematriaWord(word) {
+            const inputEl = document.getElementById('gematria-input');
+            inputEl.value = word;
+            calculateGematriaFromInput(word);
+            inputEl.focus();
+        }
+
         function calculateGematriaFromInput(text) {
-            if (!text || text.trim() === '') {
+            const trimmed = text ? text.trim() : '';
+
+            if (!trimmed) {
                 document.getElementById('hebrew-transliterated-text').innerText = '—';
                 document.getElementById('gematria-equation').innerText = 'Aguardando digitação...';
                 document.getElementById('gematria-val').innerText = '0';
-                document.getElementById('gematria-meaning').innerText = 'Digite uma palavra acima para ver seu código sagrado.';
+                document.getElementById('gematria-equation-badge').innerText = 'Aguardando digitação...';
+                document.getElementById('gematria-word-title').innerText = '—';
+                document.getElementById('gematria-pt-translation').innerText = 'Digite qualquer palavra ou clique em um dos exemplos acima para ver a revelação da palavra em português.';
+                document.getElementById('gematria-meaning').innerText = 'O sistema identifica termos bíblicos sagrados, nomes divinos e raízes do hebraico antigo, trazendo luz sobre seu mistério e conexão com a Eternidade.';
+                document.getElementById('gematria-letters-details').innerText = 'Cada letra hebraica é um pictograma sagrado que conta uma história da Redenção.';
+                const connBox = document.getElementById('gematria-connections-box');
+                if (connBox) connBox.style.display = 'none';
                 return;
+            }
+
+            // Normaliza entrada para consulta no Dicionário Hebraico-Português
+            const normInput = normalizeWordKey(trimmed);
+            let dictEntry = null;
+
+            if (HEBREW_PORTUGUESE_DICTIONARY[normInput]) {
+                dictEntry = HEBREW_PORTUGUESE_DICTIONARY[normInput];
+            } else {
+                for (const key in HEBREW_PORTUGUESE_DICTIONARY) {
+                    if (normInput === key || (normInput.length >= 3 && (normInput === key || key === normInput))) {
+                        dictEntry = HEBREW_PORTUGUESE_DICTIONARY[key];
+                        break;
+                    }
+                }
             }
 
             let totalValue = 0;
             let hebrewCharsOutput = [];
             let equationTerms = [];
+            let letterDetailsList = [];
+            let displayedHebrew = '';
 
-            const cleanText = text.toLowerCase();
+            // Se for uma palavra do dicionário sagrado com grafia hebraica autêntica
+            if (dictEntry && dictEntry.gematria) {
+                totalValue = dictEntry.gematria;
+                displayedHebrew = dictEntry.hebrew;
 
-            for (let i = 0; i < cleanText.length; i++) {
-                const char = cleanText[i];
-                
-                // Ignora espaços e pontuações no cálculo numérico
-                if (char === ' ') {
-                    hebrewCharsOutput.push(' ');
-                    continue;
+                // Extrai as letras hebraicas puras (sem nikkud nem pontuação)
+                const cleanHebrew = dictEntry.hebrew.replace(/[\u0591-\u05C7\s\/\(\)0-9\"\'\-\–]/g, '');
+                const lettersArr = Array.from(cleanHebrew);
+
+                for (let j = 0; j < lettersArr.length; j++) {
+                    const hChar = lettersArr[j];
+                    if (HEBREW_GEMATRIA_MAP[hChar]) {
+                        const m = HEBREW_GEMATRIA_MAP[hChar];
+                        equationTerms.push(`${hChar} (${m.val})`);
+                        if (HEBREW_LETTER_DETAILS[hChar]) {
+                            letterDetailsList.push(HEBREW_LETTER_DETAILS[hChar]);
+                        }
+                    }
                 }
 
-                const mapping = HEBREW_GEMATRIA_MAP[char];
-                if (mapping) {
-                    hebrewCharsOutput.push(mapping.hebrew);
-                    totalValue += mapping.val;
-                    equationTerms.push(`${mapping.hebrew} (${mapping.val})`);
-                } else if (HEBREW_GEMATRIA_MAP[text[i]]) { // Se o próprio caractere for hebraico maiúsculo/original
-                    const origMapping = HEBREW_GEMATRIA_MAP[text[i]];
-                    hebrewCharsOutput.push(origMapping.hebrew);
-                    totalValue += origMapping.val;
-                    equationTerms.push(`${origMapping.hebrew} (${origMapping.val})`);
+                // Se não formou equação por letras puras (ex: termo abreviado), cria equação direta
+                if (equationTerms.length === 0) {
+                    equationTerms.push(`${dictEntry.hebrew} (${dictEntry.gematria})`);
+                }
+            } else {
+                // Cálculo e transliteração caractere a caractere para palavras livres
+                const rawChars = Array.from(trimmed);
+
+                for (let i = 0; i < rawChars.length; i++) {
+                    const rawChar = rawChars[i];
+                    const charLower = rawChar.toLowerCase();
+
+                    if (rawChar === ' ') {
+                        hebrewCharsOutput.push(' ');
+                        continue;
+                    }
+
+                    // Se for caractere hebraico direto
+                    if (HEBREW_GEMATRIA_MAP[rawChar]) {
+                        const m = HEBREW_GEMATRIA_MAP[rawChar];
+                        hebrewCharsOutput.push(m.hebrew);
+                        totalValue += m.val;
+                        equationTerms.push(`${m.hebrew} (${m.val})`);
+                        if (HEBREW_LETTER_DETAILS[m.hebrew]) {
+                            letterDetailsList.push(HEBREW_LETTER_DETAILS[m.hebrew]);
+                        }
+                    } 
+                    // Se for caractere fonético latino (português)
+                    else if (HEBREW_GEMATRIA_MAP[charLower]) {
+                        const m = HEBREW_GEMATRIA_MAP[charLower];
+                        hebrewCharsOutput.push(m.hebrew);
+                        totalValue += m.val;
+                        equationTerms.push(`${m.hebrew} (${m.val})`);
+                        if (HEBREW_LETTER_DETAILS[m.hebrew]) {
+                            letterDetailsList.push(HEBREW_LETTER_DETAILS[m.hebrew]);
+                        }
+                    }
+                }
+
+                displayedHebrew = hebrewCharsOutput.join('');
+
+                // Verifica se a palavra em hebraico resultante bate com o dicionário
+                const normHebrew = normalizeWordKey(displayedHebrew);
+                if (!dictEntry && HEBREW_PORTUGUESE_DICTIONARY[normHebrew]) {
+                    dictEntry = HEBREW_PORTUGUESE_DICTIONARY[normHebrew];
                 }
             }
 
-            const hebrewResultStr = hebrewCharsOutput.join('');
-            document.getElementById('hebrew-transliterated-text').innerText = hebrewResultStr || '—';
-            document.getElementById('gematria-equation').innerText = equationTerms.length > 0 ? equationTerms.join(' + ') + ' = ' + totalValue : 'Sem correspondência numéricas.';
+            document.getElementById('hebrew-transliterated-text').innerText = displayedHebrew || '—';
+            
+            const eqText = equationTerms.length > 0 
+                ? equationTerms.join(' + ') + ' = ' + totalValue 
+                : 'Sem correspondências numéricas.';
+            document.getElementById('gematria-equation').innerText = eqText;
+            document.getElementById('gematria-equation-badge').innerText = eqText;
             document.getElementById('gematria-val').innerText = totalValue;
 
-            // Revelação dos Significados Espirituais por Valor Gematria
-            let meaning = `Código Gematria da palavra "${text}": ${totalValue}.`;
-            if (totalValue === 26) meaning = '✨ 26 = O Código Sagrado do Nome de God/Deus (יהוה - YAHWEH / O CRIADOR)!';
-            else if (totalValue === 13) meaning = '✨ 13 = Valor de אֶחָד (Echad) — Unidade Divina e Amor (Deus é Um).';
-            else if (totalValue === 18) meaning = '✨ 18 = Valor de חַי (Chai) — A Vida Abundante e Eterna!';
-            else if (totalValue === 75) meaning = '✨ 75 = Transliteração de DEUS / PAZ — Frequência da Comunhão Eterna.';
-            else if (totalValue === 386 || totalValue === 358) meaning = '✨ 386 / 358 = Código Gematria de יֵשׁוּעַ (YESHUA) & מָשִׁיחַ (Mashiach) — O Messias Redentor!';
-            else if (totalValue === 400) meaning = '✨ 400 = Valor da Letra ת (Tav) — A Perfeição, a Aliança e a Eternidade.';
-            else if (totalValue === 100) meaning = '✨ 100 = Valor da Letra ק (Kof) — Santidade e Iluminação Divina.';
-            else if (totalValue === 43) meaning = '✨ 43 = Código da Palavra AMOR — Sintonia de Fé e Luz.';
+            // Elementos da Janela ao Lado de Significado em Português
+            const wordTitleEl = document.getElementById('gematria-word-title');
+            const ptTransEl = document.getElementById('gematria-pt-translation');
+            const meaningEl = document.getElementById('gematria-meaning');
+            const connBox = document.getElementById('gematria-connections-box');
+            const connText = document.getElementById('gematria-connections-text');
 
-            document.getElementById('gematria-meaning').innerText = meaning;
+            if (dictEntry) {
+                wordTitleEl.innerText = `${dictEntry.hebrew} • ${dictEntry.translit}`;
+                ptTransEl.innerHTML = `<span style="color: #ffffff; text-shadow: 0 0 12px rgba(0,255,136,0.4);">${dictEntry.ptMeaning}</span>`;
+                meaningEl.innerHTML = dictEntry.spiritual;
+                
+                if (dictEntry.connection) {
+                    connBox.style.display = 'block';
+                    connText.innerText = dictEntry.connection;
+                } else {
+                    connBox.style.display = 'none';
+                }
+            } else {
+                // Se a palavra for livre (ex: um nome próprio ou frase não catalogada)
+                wordTitleEl.innerText = `${displayedHebrew} (${trimmed.toUpperCase()})`;
+                ptTransEl.innerHTML = `Palavra em Português: <strong style="color: var(--neon-green);">${trimmed.toUpperCase()}</strong> transliterada para <strong style="color: #ffffff; font-family: var(--font-hebrew); font-size: 1.3rem;">${displayedHebrew}</strong>`;
+
+                let customSpiritual = `Ao transliterar a palavra <strong>"${trimmed}"</strong> para o hebraico, seus caracteres sagrados formam o valor numérico <strong>${totalValue}</strong>. `;
+                
+                // Conexões de Gematria Sagrada por Valor Numérico
+                let customConn = '';
+                if (totalValue === 26) {
+                    customSpiritual += '✨ <strong>CÓDIGO SAGRADO 26:</strong> Possui o mesmo valor do Nome Inefável de Deus Pai (יהוה - YAHWEH)! A frequência sagrada do Criador.';
+                    customConn = '26 = יהוה (YHVH - O Criador Supremo e Eterno).';
+                } else if (totalValue === 13) {
+                    customSpiritual += '✨ <strong>CÓDIGO SAGRADO 13:</strong> Valor exato de אַהֲבָה (Ahava - "Amor") e אֶחָד (Echad - "Unidade"). Revela que Deus é Amor e Um só!';
+                    customConn = '13 = אַהֲבָה (Amor) e אֶחָד (Unidade). 13 + 13 = 26 (Deus)!';
+                } else if (totalValue === 18) {
+                    customSpiritual += '✨ <strong>CÓDIGO SAGRADO 18:</strong> Valor de חַי (Chai - "Vida"). Simboliza a vida abundante concedida por Yeshua na Nova Terra!';
+                    customConn = '18 = חַי (Chai - Vida Abundante e Eterna).';
+                } else if (totalValue === 32) {
+                    customSpiritual += '✨ <strong>CÓDIGO SAGRADO 32:</strong> Valor de לֵב (Lev - "Coração") e dos 32 caminhos da Sabedoria Divina.';
+                    customConn = '32 = לֵב (Coração transformado pela Palavra de Deus).';
+                } else if (totalValue === 33) {
+                    customSpiritual += '✨ <strong>CÓDIGO SAGRADO YESHUA 33:</strong> Representa a plenitude dos 33 anos de Yeshua, Sua vitória sobre a morte e a glória da Nova Terra!';
+                    customConn = '33 = YESHUA 33 — O Cordeiro Triunfante da Eternidade.';
+                } else if (totalValue === 86) {
+                    customSpiritual += '✨ <strong>CÓDIGO SAGRADO 86:</strong> Valor numérico de אֱלֹהִים (Elohim - "Deus Todo-Poderoso") e de הַלְלוּיָהּ (Halleluyah - "Louvai ao Senhor").';
+                    customConn = '86 = אֱלֹהִים (Elohim) e הַלְלוּיָהּ (Aleluia).';
+                } else if (totalValue === 91) {
+                    customSpiritual += '✨ <strong>CÓDIGO SAGRADO 91:</strong> Valor de אָמֵן (Amen - "Assim Seja") e da união mística de YHVH (26) + Adonai (65) = 91!';
+                    customConn = '91 = אָמֵן (Amen) — O selo sagrado da certeza e fidelidade de Deus.';
+                } else if (totalValue === 146) {
+                    customSpiritual += '✨ <strong>CÓDIGO SAGRADO 146:</strong> Valor de עוֹלָם (Olam - "Eternidade"). A morada eterna na presença do Criador.';
+                    customConn = '146 = עוֹלָם (Olam - Eternidade / Universo além do tempo).';
+                } else if (totalValue === 207) {
+                    customSpiritual += '✨ <strong>CÓDIGO SAGRADO 207:</strong> Valor de אוֹר (Or - "Luz Divina") e רָז (Raz - "Mistério Revelado").';
+                    customConn = '207 = אוֹר (Luz Primordial do Criador).';
+                } else if (totalValue === 358) {
+                    customSpiritual += '✨ <strong>CÓDIGO PROFÉTICO 358:</strong> Valor do Messias Prometido מָשִׁיחַ (Mashiach). O Redentor Eterno!';
+                    customConn = '358 = מָשִׁיחַ (Mashiach - O Messias Salvador).';
+                } else if (totalValue === 386) {
+                    customSpiritual += '✨ <strong>CÓDIGO MESSIÂNICO 386:</strong> Valor do Nome Sagrado יֵשׁוּעַ (Yeshua - "O Senhor Salva") e de מָקוֹר (Makor - "Fonte de Águas Vivas")!';
+                    customConn = '386 = יֵשׁוּעַ (Yeshua - Jesus Salvador) e מָקוֹר (Fonte da Vida).';
+                } else if (totalValue === 400) {
+                    customSpiritual += '✨ <strong>CÓDIGO SAGRADO 400:</strong> Valor da letra ת (Tav - A Aliança e Perfeição). O selo final da Salvação e Eternidade.';
+                    customConn = '400 = ת (Tav - O Selo da Cruz e da Aliança Eterna).';
+                } else {
+                    customSpiritual += `Na sabedoria das Escrituras, cada caractere hebraico carrega uma mensagem sagrada de comunhão e revelação com o Altíssimo.`;
+                }
+
+                meaningEl.innerHTML = customSpiritual;
+
+                if (customConn) {
+                    connBox.style.display = 'block';
+                    connText.innerText = customConn;
+                } else {
+                    connBox.style.display = 'none';
+                    connText.innerText = '';
+                }
+            }
+
+            // Exibe a decomposição pictográfica das letras hebraicas da palavra
+            const lettersBox = document.getElementById('gematria-letters-details');
+            if (letterDetailsList.length > 0) {
+                const uniqueLetters = [];
+                const seen = new Set();
+                for (const item of letterDetailsList) {
+                    if (!seen.has(item.name)) {
+                        seen.add(item.name);
+                        uniqueLetters.push(item);
+                    }
+                }
+
+                let html = '<div style="display: flex; flex-direction: column; gap: 0.45rem;">';
+                for (const l of uniqueLetters) {
+                    html += `
+                        <div style="background: rgba(0,255,136,0.06); border-radius: 6px; padding: 0.4rem 0.65rem; border-left: 2px solid var(--neon-green);">
+                            <span style="font-family: var(--font-hebrew); font-size: 1.15rem; color: var(--neon-green); font-weight: bold;">${l.name}</span>
+                            <span style="color: var(--neon-mint); font-size: 0.82rem; margin-left: 0.4rem; font-weight: 600;">[${l.picto}]:</span>
+                            <span style="color: #f0fdf4; font-size: 0.82rem; margin-left: 0.3rem;">${l.meaning}</span>
+                        </div>
+                    `;
+                }
+                html += '</div>';
+                lettersBox.innerHTML = html;
+            } else {
+                lettersBox.innerHTML = '<span style="color: var(--text-muted);">Nenhuma letra hebraica identificada nesta entrada.</span>';
+            }
         }
 
         function addLetter(hebrewLetter) {
@@ -1064,54 +1643,6 @@
 
         function closeLightbox() {
             document.getElementById('lightbox').style.display = 'none';
-        }
-
-        // 6. Interactive Louvor & Video Switcher Controls
-        function switchVideo(youtubeId, titleText) {
-            const section = document.getElementById('secao-louvor-video');
-            const iframe = document.getElementById('inpage-kodoish-iframe');
-            const directLink = document.getElementById('btn-direct-yt');
-            const activeTitle = document.getElementById('video-active-title');
-
-            if (section) section.style.display = 'block';
-            if (iframe) {
-                iframe.src = `https://www.youtube-nocookie.com/embed/${youtubeId}?rel=0&enablejsapi=1&autoplay=1`;
-            }
-            if (directLink) {
-                directLink.href = `https://www.youtube.com/watch?v=${youtubeId}`;
-            }
-            if (activeTitle && titleText) {
-                activeTitle.innerText = titleText.toUpperCase();
-            }
-            section.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-
-        function toggleInPagePlayer(show) {
-            switchVideo('lHdr7akL7xg', 'Yeshua — Frei Gilson (Som do Monte)');
-        }
-
-        function openKodoishModal() {
-            document.getElementById('modal-kodoish').style.display = 'flex';
-        }
-
-        function closeKodoishModal() {
-            document.getElementById('modal-kodoish').style.display = 'none';
-            const iframe = document.getElementById('kodoish-iframe');
-            if (iframe) {
-                const src = iframe.src;
-                iframe.src = '';
-                iframe.src = src;
-            }
-        }
-
-        function closeKodoishModal() {
-            document.getElementById('modal-kodoish').style.display = 'none';
-            const iframe = document.getElementById('kodoish-iframe');
-            if (iframe) {
-                const src = iframe.src;
-                iframe.src = '';
-                iframe.src = src;
-            }
         }
     </script>
 </body>
